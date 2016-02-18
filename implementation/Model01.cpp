@@ -19,7 +19,7 @@ void Model01::led_sync() {
 
 
 void Model01::scan_matrix() {
-    uint8_t key_data;
+    uint8_t key_data =0;
     //scan the Keyboard matrix looking for connections
     for (byte row = 0; row < 4; row++) {
 
@@ -27,6 +27,19 @@ void Model01::scan_matrix() {
             handle_key_event(row, col, &key_data);
             handle_key_event(row, (8- 1) - col, &key_data);
         }
+    }
+    leftHand.sendLEDData();
+    // check if a key is ready, and if so, then read it.
+    key_t left_key = leftHand.readKey();
+    if (left_key.key>0) {
+        handle_key_event(0,0, &key_data);
+    }
+
+    rightHand.sendLEDData();
+    // check if a key is ready, and if so, then read it.
+    key_t right_key = rightHand.readKey();
+    if (right_key.key>0) {
+        handle_key_event(0,0, &key_data);
     }
 }
 

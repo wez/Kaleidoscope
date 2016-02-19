@@ -4,9 +4,8 @@
 BOARD    = model01
 MCU 		= atmega32u4
 
-DEVICE_PORT :=  `ls /dev/cu.usbmodemHID??`
-DEVICE_PORT :=  `ls /dev/cu.usbmodem14?1`
-DEVICE_PORT_BOOTLOADER := `ls /dev/cu.usbmodem14?1`
+DEVICE_PORT :=  `ls -r /dev/cu.usbmodem* |head -n1`
+DEVICE_PORT_BOOTLOADER := `ls -r /dev/cu.usbmodem*|head -n1`
 ARDUINO_LIBS = 
 GIT_VERSION := $(shell git describe --abbrev=4 --dirty --always)
 
@@ -65,7 +64,7 @@ reset-device:
 	stty -f $(DEVICE_PORT) 1200 ;
 
 flash: compile reset-device
-	sleep 3
+	sleep 1
 	$(ARDUINO_TOOLS_PATH)/avr/bin/avrdude \
 		-C$(ARDUINO_TOOLS_PATH)/avr/etc/avrdude.conf \
 		-v \

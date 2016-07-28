@@ -22,7 +22,7 @@ void setup();
 #include <avr/wdt.h>
 
 #include "KeyboardConfig.h"
-#include "generated/keymaps.h"
+#include "keymaps.h"
 #include "key_events.h"
 
 extern HARDWARE_IMPLEMENTATION KeyboardHardware;

@@ -1,13 +1,18 @@
 #pragma once
 #include <Arduino.h>
 
+#define ROWS 4
+#define COLS 16
+#define KEYMAPS 3
+#define NUMPAD_KEYMAP 2
+
 #include "key_defs.h"
 #include "keyswitch_state.h"
 #include "MouseWrapper.h"
 #include "LEDControl.h"
 #include "Storage.h"
 #include "keymaps.h"
-#include "generated/keymaps.h"
+#include "keymaps.h"
 
 extern const Key keymaps[KEYMAPS][ROWS][COLS];
 extern uint8_t primary_keymap;

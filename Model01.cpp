@@ -54,15 +54,18 @@ cRGB Model01::led_get_crgb_at(uint8_t i) {
 }
 
 void Model01::led_sync() {
-    rightHand.sendLEDData();
-    rightHand.sendLEDData();
-    rightHand.sendLEDData();
-    rightHand.sendLEDData();
-    leftHand.sendLEDData();
-    leftHand.sendLEDData();
-    leftHand.sendLEDData();
-    leftHand.sendLEDData();
+   leftHand.sendLEDData();
+   rightHand.sendLEDData();
+   
+   leftHand.sendLEDData();
+   rightHand.sendLEDData();
 
+   leftHand.sendLEDData();
+   rightHand.sendLEDData();
+
+   leftHand.sendLEDData();
+   rightHand.sendLEDData();
+            
 }
 
 void debug_key_event(keydata_t state, keydata_t previousState, uint8_t keynum, uint8_t row, uint8_t col) {

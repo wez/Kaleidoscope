@@ -102,7 +102,7 @@
 
 static const uint8_t SDA = 2;
 static const uint8_t SCL = 3;
-#define LED_BUILTIN 13
+#define LED_BUILTIN 17
 #define LED_BUILTIN_RX 17
 #define LED_BUILTIN_TX 30
 

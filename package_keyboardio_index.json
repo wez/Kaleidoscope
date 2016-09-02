@@ -13,7 +13,7 @@
           "name": "Keyboardio",
           "architecture": "avr",
           "version": "1.0.0",
-          "category": "ATmega",
+          "category": "Arduino@Heart",
           "help": {
             "online": "https://github.com/Keyboardio"
           },

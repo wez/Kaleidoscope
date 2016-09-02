@@ -1,0 +1,3 @@
+[submodule "keyboardio/avr/bootloaders/caterina"]
+	path = keyboardio/avr/bootloaders/caterina
+	url = https://github.com/keyboardio/Model01Bootloader

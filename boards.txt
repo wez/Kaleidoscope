@@ -21,7 +21,7 @@ model01.bootloader.tool=avrdude
 model01.bootloader.low_fuses=0xff
 model01.bootloader.high_fuses=0xd8
 model01.bootloader.extended_fuses=0xcb
-model01.bootloader.file=caterina/Caterina-Model01.hex
+model01.bootloader.file=caterina/Caterina.hex
 model01.bootloader.unlock_bits=0x3F
 model01.bootloader.lock_bits=0x2F
 

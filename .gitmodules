@@ -2,8 +2,8 @@
 	path = keyboardio/bootloaders/caterina
 	url = https://github.com/keyboardio/Model01Bootloader
 [submodule "KeyboardioHID"]
-	path = KeyboardioHID
+	path = libraries/KeyboardioHID
 	url = https://github.com/keyboardio/KeyboardioHID
 [submodule "KeyboardioScanner"]
-	path = KeyboardioScanner
+	path = libraries/KeyboardioScanner
 	url = https://github.com/keyboardio/KeyboardioScanner

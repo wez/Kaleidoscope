@@ -25,7 +25,11 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <compat/twi.h>
-#include "Arduino.h" // for digitalWrite
+// #include "Arduino.h" // for digitalWrite
+
+#define true 1
+#define false 0
+
 
 #ifndef cbi
 #define cbi(sfr, bit) (_SFR_BYTE(sfr) &= ~_BV(bit))
@@ -73,8 +77,10 @@ void twi_init(void)
   twi_inRepStart = false;
   
   // activate internal pullups for twi.
-  digitalWrite(SDA, 1);
-  digitalWrite(SCL, 1);
+  // digitalWrite(SDA, 1);
+  PORTD |= _BV(0);
+  // digitalWrite(SCL, 1);
+  PORTD |= _BV(1);  
 
   // initialize twi prescaler and bit rate
   cbi(TWSR, TWPS0);
@@ -102,8 +108,10 @@ void twi_disable(void)
   TWCR &= ~(_BV(TWEN) | _BV(TWIE) | _BV(TWEA));
 
   // deactivate internal pullups for twi.
-  digitalWrite(SDA, 0);
-  digitalWrite(SCL, 0);
+  // digitalWrite(SDA, 0);
+  PORTD &= ~_BV(0);
+  // digitalWrite(SCL, 0);
+  PORTD &= ~_BV(1);
 }
 
 /* 

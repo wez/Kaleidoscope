@@ -286,15 +286,17 @@ uint8_t twi_writeTo(uint8_t address, uint8_t* data, uint8_t length, uint8_t wait
   while(wait && (TWI_MTX == twi_state)){
     continue;
   }
-  
-  if (twi_error == 0xFF)
-    return 0;	// success
-  else if (twi_error == TW_MT_SLA_NACK)
-    return 2;	// error: address send, nack received
-  else if (twi_error == TW_MT_DATA_NACK)
-    return 3;	// error: data send, nack received
-  else
-    return 4;	// other twi error
+ 
+  switch (twi_error) {
+ 	case 0xFF: 
+    		return 0;	// success
+  	case TW_MT_SLA_NACK:
+    		return 2;	// error: address send, nack received
+  	case TW_MT_DATA_NACK:
+    		return 3;	// error: data send, nack received
+   	default: 
+    		return 4;	// other twi error
+	}
 }
 
 /* 

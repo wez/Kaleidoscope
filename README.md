@@ -1,5 +1,11 @@
 # Akela-IgnoranceIsBliss
 
+![status][st:experimental]
+
+ [st:stable]: https://img.shields.io/badge/stable-✔-black.png?style=flat&colorA=44cc11&colorB=494e52
+ [st:broken]: https://img.shields.io/badge/broken-X-black.png?style=flat&colorA=e05d44&colorB=494e52
+ [st:experimental]: https://img.shields.io/badge/experimental----black.png?style=flat&colorA=dfb317&colorB=494e52
+
 The `IgnoranceIsBliss` plugin provides an easy way to ignore certain keys on the
 keyboard. Intended to be used on janky prototypes, where pressing one key ofter
 triggers another - and we want to ignore the other one.

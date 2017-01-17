@@ -42,4 +42,4 @@ method:
 Starting from the [example][plugin:example] is the recommended way of getting
 started with the plugin.
 
- [plugin:example]: https://github.com/Akela-Plugins/Akela-IgnoranceIsBliss/blob/master/examples/IgnoranceIsBliss/IgnoranceIsBliss.ino
+ [plugin:example]: https://github.com/keyboardio/Akela-IgnoranceIsBliss/blob/master/examples/IgnoranceIsBliss/IgnoranceIsBliss.ino

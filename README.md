@@ -108,4 +108,4 @@ The plugin provides a single object, `DualUse`, with the following methods:
 Starting from the [example][plugin:example] is the recommended way of getting
 started with the plugin.
 
- [plugin:example]: https://github.com/Akela-Plugins/Akela-DualUse/blob/master/examples/DualUse/DualUse.ino
+ [plugin:example]: https://github.com/keyboardio/Akela-DualUse/blob/master/examples/DualUse/DualUse.ino

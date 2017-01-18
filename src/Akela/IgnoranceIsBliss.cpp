@@ -49,7 +49,7 @@ namespace Akela {
       currentHand = rightHandIgnores;
     }
 
-    if (bitRead (currentHand, row * COLS + col))
+    if (currentHand & SCANBIT (row, col))
       return Key_NoKey;
 
     return mappedKey;

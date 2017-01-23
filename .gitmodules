@@ -1,3 +1,6 @@
 [submodule "bootloaders/caterina"]
 	path = bootloaders/caterina
 	url = https://github.com/keyboardio/Model01Bootloader
+[submodule "libraries"]
+	path = libraries
+	url = https://github.com/keyboardio/keyboardio-libraries

@@ -145,7 +145,7 @@ namespace Akela {
           if (specIndex >= 8)
             m--;
 
-          Key newKey = { KEY_FLAGS, m };
+          Key newKey = { m, KEY_FLAGS };
 
           handle_key_event (newKey, row, col, IS_PRESSED | INJECTED);
           Keyboard.sendReport ();

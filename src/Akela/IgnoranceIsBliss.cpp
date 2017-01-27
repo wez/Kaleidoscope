@@ -28,7 +28,7 @@ namespace Akela {
 
   void
   IgnoranceIsBliss::begin (void) {
-    event_handler_hook_add (this->eventHandlerHook);
+    event_handler_hook_use (this->eventHandlerHook);
   }
 
   void

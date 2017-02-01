@@ -38,6 +38,7 @@ namespace Akela {
 
     void on (void);
     void off (void);
+    static uint8_t timeOut;
 
     void inject (Key key, uint8_t keyState);
 
@@ -47,7 +48,6 @@ namespace Akela {
     static bool specDefault;
 
     static uint8_t timer;
-    static const uint8_t timeOut = DEFAULT_TIMEOUT;
 
     static Key specialAction (uint8_t specIndex);
     static void pressAllSpecials (byte row, byte col);

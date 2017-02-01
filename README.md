@@ -103,6 +103,16 @@ The plugin provides a single object, `DualUse`, with the following methods:
 > Turns the plugin off, by making the dual-use keys act as either the modifier
 > or layer switch keys, or as the key component.
 
+### `.timeOut`
+
+> The number of loop iterations to wait before considering a held key in
+> isolation as its secondary role. That is, we'd have to hold a `Z/Control` key
+> this long, by itself, to trigger the `Control` role.
+>
+> Not strictly a method, it is a variable one can assign a new value to.
+>
+> Defaults to 20.
+
 ## Further reading
 
 Starting from the [example][plugin:example] is the recommended way of getting

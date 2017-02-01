@@ -131,7 +131,7 @@ namespace Akela {
         bitWrite (keyActionNeededMap, specIndex, 1);
         timer = 0;
       } else if (key_is_pressed (keyState)) {
-        if (timer < timeOut)
+        if (timer <= timeOut)
           timer++;
 
         if (timer >= timeOut) {

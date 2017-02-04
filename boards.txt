@@ -34,5 +34,5 @@ model01.build.usb_manufacturer="Keyboardio"
 model01.build.board=AVR_MODEL01
 model01.build.core=arduino:arduino
 model01.build.variant=model01
-model01.build.extra_flags={build.usb_flags}
+model01.build.extra_flags={build.usb_flags} -DKEYBOARDIO_HARDWARE_H="Keyboardio-Hardware-Model01.h"
 

@@ -36,3 +36,36 @@ model01.build.core=arduino:arduino
 model01.build.variant=model01
 model01.build.extra_flags={build.usb_flags} -DKEYBOARDIO_HARDWARE_H="Keyboardio-Hardware-Model01.h"
 
+##############################################################
+
+shortcut.name=Shortcut
+shortcut.vid.0=0xFEED
+shortcut.pid.0=0x6060
+
+shortcut.upload.tool=avrdude
+shortcut.upload.protocol=avr109
+shortcut.upload.maximum_size=28672
+shortcut.upload.maximum_data_size=2560
+shortcut.upload.speed=57600
+shortcut.upload.disable_flushing=true
+shortcut.upload.use_1200bps_touch=true
+shortcut.upload.wait_for_upload_port=true
+
+shortcut.bootloader.tool=avrdude
+shortcut.bootloader.low_fuses=0xff
+shortcut.bootloader.high_fuses=0xd8
+shortcut.bootloader.extended_fuses=0xcb
+shortcut.bootloader.file=caterina/Caterina.hex
+shortcut.bootloader.unlock_bits=0x3F
+shortcut.bootloader.lock_bits=0x2F
+
+shortcut.build.mcu=atmega32u4
+shortcut.build.f_cpu=16000000L
+shortcut.build.vid=0xFEED
+shortcut.build.pid=0x6060
+shortcut.build.usb_product="Shortcut"
+shortcut.build.usb_manufacturer="Shortcut"
+shortcut.build.board=AVR_SHORTCUT
+shortcut.build.core=arduino:arduino
+shortcut.build.variant=shortcut
+shortcut.build.extra_flags={build.usb_flags} -DKEYBOARDIO_HARDWARE_H="Keyboardio-Hardware-Shortcut.h"

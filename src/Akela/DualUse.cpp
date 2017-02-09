@@ -23,8 +23,8 @@ using namespace Akela::Ranges;
 namespace Akela {
   uint32_t DualUse::keyActionNeededMap;
   uint32_t DualUse::pressedMap;
-  uint8_t DualUse::timer;
-  uint8_t DualUse::timeOut = 20;
+  uint32_t DualUse::startTime;
+  uint16_t DualUse::timeOut = 1250;
 
   bool DualUse::specDefault;
 
@@ -129,19 +129,13 @@ namespace Akela {
       if (key_toggled_on (keyState)) {
         bitWrite (pressedMap, specIndex, 1);
         bitWrite (keyActionNeededMap, specIndex, 1);
-        timer = 0;
+        startTime = millis ();
       } else if (key_is_pressed (keyState)) {
-        if (timer <= timeOut)
-          timer++;
-
-        if (timer >= timeOut) {
+        if ((millis () - startTime) >= timeOut) {
           newKey = specialAction (specIndex);
         }
       } else if (key_toggled_off (keyState)) {
-        if (timer < timeOut)
-          timer++;
-
-        if ((timer <= timeOut) && bitRead (keyActionNeededMap, specIndex)) {
+        if (((millis () - startTime) <= timeOut) && bitRead (keyActionNeededMap, specIndex)) {
           uint8_t m = mappedKey.raw - DU_FIRST - (specIndex << 8);
           if (specIndex >= 8)
             m--;
@@ -160,7 +154,6 @@ namespace Akela {
 
         bitWrite (pressedMap, specIndex, 0);
         bitWrite (keyActionNeededMap, specIndex, 0);
-        timer = 0;
       }
 
       return newKey;

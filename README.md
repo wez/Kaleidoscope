@@ -105,13 +105,13 @@ The plugin provides a single object, `DualUse`, with the following methods:
 
 ### `.timeOut`
 
-> The number of loop iterations to wait before considering a held key in
-> isolation as its secondary role. That is, we'd have to hold a `Z/Control` key
-> this long, by itself, to trigger the `Control` role.
+> The number of milliseconds to wait before considering a held key in isolation
+> as its secondary role. That is, we'd have to hold a `Z/Control` key this long,
+> by itself, to trigger the `Control` role.
 >
 > Not strictly a method, it is a variable one can assign a new value to.
 >
-> Defaults to 20.
+> Defaults to 1250.
 
 ## Further reading
 

@@ -111,7 +111,7 @@ The plugin provides a single object, `DualUse`, with the following methods:
 >
 > Not strictly a method, it is a variable one can assign a new value to.
 >
-> Defaults to 1250.
+> Defaults to 1000.
 
 ## Further reading
 

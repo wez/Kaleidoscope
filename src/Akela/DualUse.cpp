@@ -24,7 +24,7 @@ namespace Akela {
   uint32_t DualUse::keyActionNeededMap;
   uint32_t DualUse::pressedMap;
   uint32_t DualUse::startTime;
-  uint16_t DualUse::timeOut = 1250;
+  uint16_t DualUse::timeOut = 1000;
 
   bool DualUse::specDefault;
 

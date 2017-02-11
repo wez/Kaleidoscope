@@ -1,4 +1,4 @@
-# Akela-IgnoranceIsBliss
+# Kaleidoscope-IgnoranceIsBliss
 
 ![status][st:stable]
 
@@ -17,13 +17,14 @@ plugin which keys to ignore. It should be the first plugin used, so it has a
 chance to ignore keys before anything else gets to it.
 
 ```c++
-#include <Akela-IgnoranceIsBliss.h>
+#include <Kaleidoscope.h>
+#include <Kaleidoscope-IgnoranceIsBliss.h>
 
 void setup (void) {
   IgnoranceIsBliss.configure (R0C6 | R2C6, R0C15);
 
-  Keyboardio.setup (KEYMAP_SIZE);
-  Keyboardio.use (&IgnoranceIsBliss, NULL);
+  Kaleidoscope.setup (KEYMAP_SIZE);
+  Kaleidoscope.use (&IgnoranceIsBliss, NULL);
 }
 ```
 
@@ -42,4 +43,4 @@ method:
 Starting from the [example][plugin:example] is the recommended way of getting
 started with the plugin.
 
- [plugin:example]: https://github.com/keyboardio/Akela-IgnoranceIsBliss/blob/master/examples/IgnoranceIsBliss/IgnoranceIsBliss.ino
+ [plugin:example]: https://github.com/keyboardio/Kaleidoscope-IgnoranceIsBliss/blob/master/examples/IgnoranceIsBliss/IgnoranceIsBliss.ino

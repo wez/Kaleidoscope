@@ -1,5 +1,5 @@
 /* -*- mode: c++ -*-
- * Akela -- Animated Keyboardio Extension Library for Anything
+ * Kaleidoscope-IgnoranceIsBliss -- Ignore keys on a keyboard
  * Copyright (C) 2017  Gergely Nagy
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,10 +18,10 @@
 
 #pragma once
 
-#include <Akela-Core.h>
+#include <Kaleidoscope.h>
 
-namespace Akela {
-  class IgnoranceIsBliss : public KeyboardioPlugin {
+namespace KaleidoscopePlugins {
+  class IgnoranceIsBliss : public KaleidoscopePlugin {
   public:
     IgnoranceIsBliss (void);
 
@@ -36,4 +36,4 @@ namespace Akela {
   };
 };
 
-extern Akela::IgnoranceIsBliss IgnoranceIsBliss;
+extern KaleidoscopePlugins::IgnoranceIsBliss IgnoranceIsBliss;

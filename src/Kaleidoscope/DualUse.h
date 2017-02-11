@@ -1,5 +1,5 @@
 /* -*- mode: c++ -*-
- * Akela -- Animated Keyboardio Extension Library for Anything
+ * Kaleidoscope-DualUse -- Dual use keys for Kaleidoscope
  * Copyright (C) 2016, 2017  Gergely Nagy
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,18 +18,19 @@
 
 #pragma once
 
-#include <Akela-Core.h>
+#include <Kaleidoscope.h>
+#include <Kaleidoscope-Ranges.h>
 
-#define MT(mod, key) (Key){ .raw = Akela::Ranges::DUM_FIRST + (((Key_ ## mod).keyCode - Key_LCtrl.keyCode) << 8) + (Key_ ## key).keyCode }
+#define MT(mod, key) (Key){ .raw = KaleidoscopePlugins::Ranges::DUM_FIRST + (((Key_ ## mod).keyCode - Key_LCtrl.keyCode) << 8) + (Key_ ## key).keyCode }
 #define SFT_T(key) MT(LShift, key)
 #define CTL_T(key) MT(LCtrl, key)
 #define ALT_T(key) MT(LAlt, key)
 #define GUI_T(key) MT(LGUI, key)
 
-#define LT(layer, key) (Key){ .raw = Akela::Ranges::DUL_FIRST + (layer << 8) + (Key_ ## key).keyCode }
+#define LT(layer, key) (Key){ .raw = KaleidoscopePlugins::Ranges::DUL_FIRST + (layer << 8) + (Key_ ## key).keyCode }
 
-namespace Akela {
-  class DualUse : public KeyboardioPlugin {
+namespace KaleidoscopePlugins {
+  class DualUse : public KaleidoscopePlugin {
   public:
     DualUse (void);
 
@@ -57,4 +58,4 @@ namespace Akela {
   };
 };
 
-extern Akela::DualUse DualUse;
+extern KaleidoscopePlugins::DualUse DualUse;

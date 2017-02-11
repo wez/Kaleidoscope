@@ -1,5 +1,5 @@
 /* -*- mode: c++ -*-
- * Akela -- Animated Keyboardio Extension Library for Anything
+ * Kaleidoscope-DualUse -- Dual use keys for Kaleidoscope
  * Copyright (C) 2016, 2017  Gergely Nagy
  *
  * This program is free software: you can redistribute it and/or modify
@@ -16,11 +16,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <Akela-DualUse.h>
+#include <Kaleidoscope.h>
+#include <Kaleidoscope-DualUse.h>
 
-using namespace Akela::Ranges;
+using namespace KaleidoscopePlugins::Ranges;
 
-namespace Akela {
+namespace KaleidoscopePlugins {
   uint32_t DualUse::keyActionNeededMap;
   uint32_t DualUse::pressedMap;
   uint32_t DualUse::startTime;
@@ -175,4 +176,4 @@ namespace Akela {
 
 };
 
-Akela::DualUse DualUse;
+KaleidoscopePlugins::DualUse DualUse;

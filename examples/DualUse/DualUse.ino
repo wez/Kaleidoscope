@@ -1,5 +1,5 @@
 /* -*- mode: c++ -*-
- * Akela -- Animated Keyboardio Extension Library for Anything
+ * Kaleidoscope-DualUse -- Dual use keys for Kaleidoscope
  * Copyright (C) 2016, 2017  Gergely Nagy
  *
  * This program is free software: you can redistribute it and/or modify
@@ -16,7 +16,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <Akela-DualUse.h>
+#include <Kaleidoscope.h>
+#include <Kaleidoscope-DualUse.h>
 
 const Key keymaps[][ROWS][COLS] PROGMEM = {
   [0] = KEYMAP_STACKED
@@ -58,11 +59,11 @@ const Key keymaps[][ROWS][COLS] PROGMEM = {
 };
 
 void setup () {
-  Keyboardio.setup (KEYMAP_SIZE);
+  Kaleidoscope.setup (KEYMAP_SIZE);
 
-  Keyboardio.use (&DualUse, NULL);
+  Kaleidoscope.use (&DualUse, NULL);
 }
 
 void loop () {
-  Keyboardio.loop ();
+  Kaleidoscope.loop ();
 }

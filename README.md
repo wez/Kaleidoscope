@@ -1,4 +1,4 @@
-# Akela-DualUse
+# Kaleidoscope-DualUse
 
 ![status][st:stable]
 
@@ -25,15 +25,16 @@ tap and release them in isolation, they will act as another key instead.
 ## Using the plugin
 
 ```c++
-#include <Akela-DualUse.h>
+#include <Kaleidoscope.h>
+#include <Kaleidoscope-DualUse.h>
 
 // in the keymap:
 CTL_T(Esc), LT(_LAYER, Esc)
 
 void setup (void) {
-  Keyboardio.setup (KEYMAP_SIZE);
+  Kaleidoscope.setup (KEYMAP_SIZE);
   
-  Keyboardio.use (&DualUse, NULL);
+  Kaleidoscope.use (&DualUse, NULL);
 }
 ```
 
@@ -118,4 +119,4 @@ The plugin provides a single object, `DualUse`, with the following methods:
 Starting from the [example][plugin:example] is the recommended way of getting
 started with the plugin.
 
- [plugin:example]: https://github.com/keyboardio/Akela-DualUse/blob/master/examples/DualUse/DualUse.ino
+ [plugin:example]: https://github.com/keyboardio/Kaleidoscope-DualUse/blob/master/examples/DualUse/DualUse.ino

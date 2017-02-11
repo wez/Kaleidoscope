@@ -3,10 +3,10 @@
 	url = https://github.com/keyboardio/Model01Bootloader
 [submodule "libraries/KeyboardioScanner"]
 	path = libraries/KeyboardioScanner
-	url = https://github.com/keyboardio/KeyboardioScanner.git
+	url = https://github.com/keyboardio/KeyboardioScanner
 [submodule "libraries/KeyboardioHID"]
 	path = libraries/KeyboardioHID
-	url = https://github.com/keyboardio/KeyboardioHID.git
+	url = https://github.com/keyboardio/KeyboardioHID
 [submodule "libraries/FingerprintUSBHost"]
 	path = libraries/FingerprintUSBHost
 	url = https://github.com/keyboardio/FingerprintUSBHost
@@ -72,7 +72,7 @@
 	url = https://github.com/keyboardio/Akela-Escape-OneShot
 [submodule "libraries/Arduino-HID"]
 	path = libraries/Arduino-HID
-	url = git@github.com:keyboardio/Arduino-HID.git
+	url = https://github.com/keyboardio/Arduino-HID
 [submodule "KeyboardioScanner"]
 	path = libraries/KeyboardioScanner
 	url = https://github.com/keyboardio/KeyboardioScanner
@@ -181,3 +181,42 @@
 [submodule "Keyboardio-Model01-TestMode"]
 	path = libraries/Keyboardio-Model01-TestMode
 	url = https://github.com/keyboardio/Keyboardio-Model01-TestMode
+[submodule "libraries/Akela-GhostInTheFirmware"]
+	path = libraries/Akela-GhostInTheFirmware
+	url = https://github.com/keyboardio/Akela-GhostInTheFirmware
+[submodule "libraries/Akela-Syster"]
+	path = libraries/Akela-Syster
+	url = https://github.com/keyboardio/Akela-Syster
+[submodule "libraries/Keyboardio-Hardware-Model01"]
+	path = libraries/Keyboardio-Hardware-Model01
+	url = https://github.com/keyboardio/Keyboardio-Hardware-Model01
+[submodule "libraries/Keyboardio-LEDControl"]
+	path = libraries/Keyboardio-LEDControl
+	url = https://github.com/keyboardio/Keyboardio-LEDControl
+[submodule "libraries/Keyboardio-LEDEffect-Breathe"]
+	path = libraries/Keyboardio-LEDEffect-Breathe
+	url = https://github.com/keyboardio/Keyboardio-LEDEffect-Breathe
+[submodule "libraries/Keyboardio-LEDEffect-Chase"]
+	path = libraries/Keyboardio-LEDEffect-Chase
+	url = https://github.com/keyboardio/Keyboardio-LEDEffect-Chase
+[submodule "libraries/Keyboardio-LEDEffect-Rainbow"]
+	path = libraries/Keyboardio-LEDEffect-Rainbow
+	url = https://github.com/keyboardio/Keyboardio-LEDEffect-Rainbow
+[submodule "libraries/Keyboardio-LEDEffect-SolidColor"]
+	path = libraries/Keyboardio-LEDEffect-SolidColor
+	url = https://github.com/keyboardio/Keyboardio-LEDEffect-SolidColor
+[submodule "libraries/Keyboardio-Macros"]
+	path = libraries/Keyboardio-Macros
+	url = https://github.com/keyboardio/Keyboardio-Macros
+[submodule "libraries/Keyboardio-Model01-TestMode"]
+	path = libraries/Keyboardio-Model01-TestMode
+	url = https://github.com/keyboardio/Keyboardio-Model01-TestMode
+[submodule "libraries/Keyboardio-MouseKeys"]
+	path = libraries/Keyboardio-MouseKeys
+	url = https://github.com/keyboardio/Keyboardio-MouseKeys
+[submodule "libraries/Keyboardio-Numlock"]
+	path = libraries/Keyboardio-Numlock
+	url = https://github.com/keyboardio/Keyboardio-Numlock
+[submodule "libraries/Model01Bootloader"]
+	path = libraries/Model01Bootloader
+	url = https://github.com/keyboardio/Model01Bootloader

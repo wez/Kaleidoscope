@@ -10,105 +10,105 @@
 [submodule "libraries/FingerprintUSBHost"]
 	path = libraries/FingerprintUSBHost
 	url = https://github.com/keyboardio/FingerprintUSBHost
-[submodule "libraries/Akela-Colormap"]
-	path = libraries/Akela-Colormap
-	url = https://github.com/keyboardio/Akela-Colormap
-[submodule "libraries/Akela-Core"]
-	path = libraries/Akela-Core
-	url = https://github.com/keyboardio/Akela-Core
-[submodule "libraries/Akela-Cycle"]
-	path = libraries/Akela-Cycle
-	url = https://github.com/keyboardio/Akela-Cycle
-[submodule "libraries/Akela-DualUse"]
-	path = libraries/Akela-DualUse
-	url = https://github.com/keyboardio/Akela-DualUse
-[submodule "libraries/Akela-Heatmap"]
-	path = libraries/Akela-Heatmap
-	url = https://github.com/keyboardio/Akela-Heatmap
-[submodule "libraries/Akela-HostOS"]
-	path = libraries/Akela-HostOS
-	url = https://github.com/keyboardio/Akela-HostOS
-[submodule "libraries/Akela-IgnoranceIsBliss"]
-	path = libraries/Akela-IgnoranceIsBliss
-	url = https://github.com/keyboardio/Akela-IgnoranceIsBliss
-[submodule "libraries/Akela-KeyLogger"]
-	path = libraries/Akela-KeyLogger
-	url = https://github.com/keyboardio/Akela-KeyLogger
-[submodule "libraries/Akela-Leader"]
-	path = libraries/Akela-Leader
-	url = https://github.com/keyboardio/Akela-Leader
-[submodule "libraries/Akela-LEDEffects"]
-	path = libraries/Akela-LEDEffects
-	url = https://github.com/keyboardio/Akela-LEDEffects
-[submodule "libraries/Akela-MagicCombo"]
-	path = libraries/Akela-MagicCombo
-	url = https://github.com/keyboardio/Akela-MagicCombo
-[submodule "libraries/Akela-OneShot"]
-	path = libraries/Akela-OneShot
-	url = https://github.com/keyboardio/Akela-OneShot
-[submodule "libraries/Akela-ShapeShifter"]
-	path = libraries/Akela-ShapeShifter
-	url = https://github.com/keyboardio/Akela-ShapeShifter
-[submodule "libraries/Akela-SpaceCadet"]
-	path = libraries/Akela-SpaceCadet
-	url = https://github.com/keyboardio/Akela-SpaceCadet
-[submodule "libraries/Akela-TapDance"]
-	path = libraries/Akela-TapDance
-	url = https://github.com/keyboardio/Akela-TapDance
-[submodule "libraries/Akela-TopsyTurvy"]
-	path = libraries/Akela-TopsyTurvy
-	url = https://github.com/keyboardio/Akela-TopsyTurvy
-[submodule "libraries/Akela-Unicode"]
-	path = libraries/Akela-Unicode
-	url = https://github.com/keyboardio/Akela-Unicode
-[submodule "libraries/Akela-LED-Stalker"]
-	path = libraries/Akela-LED-Stalker
-	url = https://github.com/keyboardio/Akela-LED-Stalker
-[submodule "libraries/Akela-LED-ActiveModColor"]
-	path = libraries/Akela-LED-ActiveModColor
-	url = https://github.com/keyboardio/Akela-LED-ActiveModColor
-[submodule "libraries/Akela-Escape-OneShot"]
-	path = libraries/Akela-Escape-OneShot
-	url = https://github.com/keyboardio/Akela-Escape-OneShot
 [submodule "libraries/Arduino-HID"]
 	path = libraries/Arduino-HID
 	url = https://github.com/keyboardio/Arduino-HID
-[submodule "libraries/Akela-GhostInTheFirmware"]
-	path = libraries/Akela-GhostInTheFirmware
-	url = https://github.com/keyboardio/Akela-GhostInTheFirmware
-[submodule "libraries/Akela-Syster"]
-	path = libraries/Akela-Syster
-	url = https://github.com/keyboardio/Akela-Syster
-[submodule "libraries/Keyboardio-Hardware-Model01"]
-	path = libraries/Keyboardio-Hardware-Model01
-	url = https://github.com/keyboardio/Keyboardio-Hardware-Model01
-[submodule "libraries/Keyboardio-LEDControl"]
-	path = libraries/Keyboardio-LEDControl
-	url = https://github.com/keyboardio/Keyboardio-LEDControl
-[submodule "libraries/Keyboardio-LEDEffect-Breathe"]
-	path = libraries/Keyboardio-LEDEffect-Breathe
-	url = https://github.com/keyboardio/Keyboardio-LEDEffect-Breathe
-[submodule "libraries/Keyboardio-LEDEffect-Chase"]
-	path = libraries/Keyboardio-LEDEffect-Chase
-	url = https://github.com/keyboardio/Keyboardio-LEDEffect-Chase
-[submodule "libraries/Keyboardio-LEDEffect-Rainbow"]
-	path = libraries/Keyboardio-LEDEffect-Rainbow
-	url = https://github.com/keyboardio/Keyboardio-LEDEffect-Rainbow
-[submodule "libraries/Keyboardio-LEDEffect-SolidColor"]
-	path = libraries/Keyboardio-LEDEffect-SolidColor
-	url = https://github.com/keyboardio/Keyboardio-LEDEffect-SolidColor
-[submodule "libraries/Keyboardio-Macros"]
-	path = libraries/Keyboardio-Macros
-	url = https://github.com/keyboardio/Keyboardio-Macros
 [submodule "libraries/Keyboardio-Model01-TestMode"]
 	path = libraries/Keyboardio-Model01-TestMode
 	url = https://github.com/keyboardio/Keyboardio-Model01-TestMode
-[submodule "libraries/Keyboardio-MouseKeys"]
-	path = libraries/Keyboardio-MouseKeys
-	url = https://github.com/keyboardio/Keyboardio-MouseKeys
-[submodule "libraries/Keyboardio-Numlock"]
-	path = libraries/Keyboardio-Numlock
-	url = https://github.com/keyboardio/Keyboardio-Numlock
 [submodule "libraries/Model01Bootloader"]
 	path = libraries/Model01Bootloader
 	url = https://github.com/keyboardio/Model01Bootloader
+[submodule "libraries/Kaleidoscope-OneShot"]
+	path = libraries/Kaleidoscope-OneShot
+	url = https://github.com/keyboardio/Kaleidoscope-OneShot
+[submodule "libraries/Kaleidoscope-TapDance"]
+	path = libraries/Kaleidoscope-TapDance
+	url = https://github.com/keyboardio/Kaleidoscope-TapDance
+[submodule "libraries/Kaleidoscope-IgnoranceIsBliss"]
+	path = libraries/Kaleidoscope-IgnoranceIsBliss
+	url = https://github.com/keyboardio/Kaleidoscope-IgnoranceIsBliss
+[submodule "libraries/Kaleidoscope-Escape-OneShot"]
+	path = libraries/Kaleidoscope-Escape-OneShot
+	url = https://github.com/keyboardio/Kaleidoscope-Escape-OneShot
+[submodule "libraries/Kaleidoscope-GhostInTheFirmware"]
+	path = libraries/Kaleidoscope-GhostInTheFirmware
+	url = https://github.com/keyboardio/Kaleidoscope-GhostInTheFirmware
+[submodule "libraries/Kaleidoscope-MouseKeys"]
+	path = libraries/Kaleidoscope-MouseKeys
+	url = https://github.com/keyboardio/Kaleidoscope-MouseKeys
+[submodule "libraries/Kaleidoscope-TopsyTurvy"]
+	path = libraries/Kaleidoscope-TopsyTurvy
+	url = https://github.com/keyboardio/Kaleidoscope-TopsyTurvy
+[submodule "libraries/Kaleidoscope-SpaceCadet"]
+	path = libraries/Kaleidoscope-SpaceCadet
+	url = https://github.com/keyboardio/Kaleidoscope-SpaceCadet
+[submodule "libraries/Kaleidoscope-KeyLogger"]
+	path = libraries/Kaleidoscope-KeyLogger
+	url = https://github.com/keyboardio/Kaleidoscope-KeyLogger
+[submodule "libraries/Kaleidoscope-Leader"]
+	path = libraries/Kaleidoscope-Leader
+	url = https://github.com/keyboardio/Kaleidoscope-Leader
+[submodule "libraries/Kaleidoscope-HostOS"]
+	path = libraries/Kaleidoscope-HostOS
+	url = https://github.com/keyboardio/Kaleidoscope-HostOS
+[submodule "libraries/Kaleidoscope-MagicCombo"]
+	path = libraries/Kaleidoscope-MagicCombo
+	url = https://github.com/keyboardio/Kaleidoscope-MagicCombo
+[submodule "libraries/Kaleidoscope-LEDControl"]
+	path = libraries/Kaleidoscope-LEDControl
+	url = https://github.com/keyboardio/Kaleidoscope-LEDControl
+[submodule "libraries/Kaleidoscope-Heatmap"]
+	path = libraries/Kaleidoscope-Heatmap
+	url = https://github.com/keyboardio/Kaleidoscope-Heatmap
+[submodule "libraries/Kaleidoscope-LED-ActiveModColor"]
+	path = libraries/Kaleidoscope-LED-ActiveModColor
+	url = https://github.com/keyboardio/Kaleidoscope-LED-ActiveModColor
+[submodule "libraries/Kaleidoscope-Colormap"]
+	path = libraries/Kaleidoscope-Colormap
+	url = https://github.com/keyboardio/Kaleidoscope-Colormap
+[submodule "libraries/Kaleidoscope-Macros"]
+	path = libraries/Kaleidoscope-Macros
+	url = https://github.com/keyboardio/Kaleidoscope-Macros
+[submodule "libraries/Kaleidoscope-ShapeShifter"]
+	path = libraries/Kaleidoscope-ShapeShifter
+	url = https://github.com/keyboardio/Kaleidoscope-ShapeShifter
+[submodule "libraries/Kaleidoscope-LED-Stalker"]
+	path = libraries/Kaleidoscope-LED-Stalker
+	url = https://github.com/keyboardio/Kaleidoscope-LED-Stalker
+[submodule "libraries/Kaleidoscope-Ranges"]
+	path = libraries/Kaleidoscope-Ranges
+	url = https://github.com/keyboardio/Kaleidoscope-Ranges
+[submodule "libraries/Kaleidoscope-Unicode"]
+	path = libraries/Kaleidoscope-Unicode
+	url = https://github.com/keyboardio/Kaleidoscope-Unicode
+[submodule "libraries/Kaleidoscope-LEDEffects"]
+	path = libraries/Kaleidoscope-LEDEffects
+	url = https://github.com/keyboardio/Kaleidoscope-LEDEffects
+[submodule "libraries/Kaleidoscope-Hardware-Model01"]
+	path = libraries/Kaleidoscope-Hardware-Model01
+	url = https://github.com/keyboardio/Kaleidoscope-Hardware-Model01
+[submodule "libraries/Kaleidoscope-Cycle"]
+	path = libraries/Kaleidoscope-Cycle
+	url = https://github.com/keyboardio/Kaleidoscope-Cycle
+[submodule "libraries/Kaleidoscope-Numlock"]
+	path = libraries/Kaleidoscope-Numlock
+	url = https://github.com/keyboardio/Kaleidoscope-Numlock
+[submodule "libraries/Kaleidoscope-DualUse"]
+	path = libraries/Kaleidoscope-DualUse
+	url = https://github.com/keyboardio/Kaleidoscope-DualUse
+[submodule "libraries/Kaleidoscope-Syster"]
+	path = libraries/Kaleidoscope-Syster
+	url = https://github.com/keyboardio/Kaleidoscope-Syster
+[submodule "libraries/Kaleidoscope-LEDEffect-Chase"]
+	path = libraries/Kaleidoscope-LEDEffect-Chase
+	url = https://github.com/keyboardio/Kaleidoscope-LEDEffect-Chase
+[submodule "libraries/Kaleidoscope-LEDEffect-SolidColor"]
+	path = libraries/Kaleidoscope-LEDEffect-SolidColor
+	url = https://github.com/keyboardio/Kaleidoscope-LEDEffect-SolidColor
+[submodule "libraries/Kaleidoscope-LEDEffect-Breathe"]
+	path = libraries/Kaleidoscope-LEDEffect-Breathe
+	url = https://github.com/keyboardio/Kaleidoscope-LEDEffect-Breathe
+[submodule "libraries/Kaleidoscope-LEDEffect-Rainbow"]
+	path = libraries/Kaleidoscope-LEDEffect-Rainbow
+	url = https://github.com/keyboardio/Kaleidoscope-LEDEffect-Rainbow

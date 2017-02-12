@@ -112,3 +112,6 @@
 [submodule "libraries/Kaleidoscope-Model01-TestMode"]
 	path = libraries/Kaleidoscope-Model01-TestMode
 	url = https://github.com/keyboardio/Kaleidoscope-Model01-TestMode
+[submodule "libraries/AtmegaScanner"]
+	path = libraries/AtmegaScanner
+	url = https://github.com/keyboardio/AtmegaScanner

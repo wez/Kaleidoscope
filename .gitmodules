@@ -13,9 +13,6 @@
 [submodule "libraries/Arduino-HID"]
 	path = libraries/Arduino-HID
 	url = https://github.com/keyboardio/Arduino-HID
-[submodule "libraries/Keyboardio-Model01-TestMode"]
-	path = libraries/Keyboardio-Model01-TestMode
-	url = https://github.com/keyboardio/Keyboardio-Model01-TestMode
 [submodule "libraries/Model01Bootloader"]
 	path = libraries/Model01Bootloader
 	url = https://github.com/keyboardio/Model01Bootloader
@@ -112,3 +109,6 @@
 [submodule "libraries/Kaleidoscope-LEDEffect-Rainbow"]
 	path = libraries/Kaleidoscope-LEDEffect-Rainbow
 	url = https://github.com/keyboardio/Kaleidoscope-LEDEffect-Rainbow
+[submodule "libraries/Kaleidoscope-Model01-TestMode"]
+	path = libraries/Kaleidoscope-Model01-TestMode
+	url = https://github.com/keyboardio/Kaleidoscope-Model01-TestMode

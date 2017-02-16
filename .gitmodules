@@ -109,3 +109,9 @@
 [submodule "libraries/Kaleidoscope-LEDEffect-Rainbow"]
 	path = libraries/Kaleidoscope-LEDEffect-Rainbow
 	url = https://github.com/keyboardio/Kaleidoscope-LEDEffect-Rainbow
+[submodule "libraries/Kaleidoscope-Model01-TestMode"]
+	path = libraries/Kaleidoscope-Model01-TestMode
+	url = https://github.com/keyboardio/Kaleidoscope-Model01-TestMode
+[submodule "libraries/Kaleidoscope"]
+	path = libraries/Kaleidoscope
+	url = https://github.com/keyboardio/Kaleidoscope

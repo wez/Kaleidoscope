@@ -121,3 +121,6 @@
 [submodule "libraries/Kaleidoscope-Hardware-Shortcut"]
 	path = libraries/Kaleidoscope-Hardware-Shortcut
 	url = https://github.com/shortcutgg/Kaleidoscope-Hardware-Shortcut
+[submodule "libraries/libraries/Kaleidoscope-LED-AlphaSquare"]
+	path = libraries/libraries/Kaleidoscope-LED-AlphaSquare
+	url = https://github.com/keyboardio/Kaleidoscope-LED-AlphaSquare

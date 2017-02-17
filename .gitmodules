@@ -118,3 +118,6 @@
 [submodule "libraries/AtmegaScanner"]
 	path = libraries/AtmegaScanner
 	url = https://github.com/keyboardio/AtmegaScanner
+[submodule "libraries/Kaleidoscope-Hardware-Shortcut"]
+	path = libraries/Kaleidoscope-Hardware-Shortcut
+	url = https://github.com/shortcutgg/Kaleidoscope-Hardware-Shortcut

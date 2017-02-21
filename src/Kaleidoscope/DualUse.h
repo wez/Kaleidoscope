@@ -48,7 +48,7 @@ namespace KaleidoscopePlugins {
     static uint32_t pressedMap;
     static bool specDefault;
 
-    static uint32_t startTime;
+    static uint32_t endTime;
 
     static Key specialAction (uint8_t specIndex);
     static void pressAllSpecials (byte row, byte col);

@@ -24,7 +24,7 @@ using namespace KaleidoscopePlugins::Ranges;
 namespace KaleidoscopePlugins {
   uint32_t DualUse::keyActionNeededMap;
   uint32_t DualUse::pressedMap;
-  uint32_t DualUse::startTime;
+  uint32_t DualUse::endTime;
   uint16_t DualUse::timeOut = 1000;
 
   bool DualUse::specDefault;
@@ -130,13 +130,13 @@ namespace KaleidoscopePlugins {
       if (key_toggled_on (keyState)) {
         bitWrite (pressedMap, specIndex, 1);
         bitWrite (keyActionNeededMap, specIndex, 1);
-        startTime = millis ();
+        endTime = millis () + timeOut;
       } else if (key_is_pressed (keyState)) {
-        if ((millis () - startTime) >= timeOut) {
+        if (millis () >= endTime) {
           newKey = specialAction (specIndex);
         }
       } else if (key_toggled_off (keyState)) {
-        if (((millis () - startTime) <= timeOut) && bitRead (keyActionNeededMap, specIndex)) {
+        if ((millis () >= endTime) && bitRead (keyActionNeededMap, specIndex)) {
           uint8_t m = mappedKey.raw - DU_FIRST - (specIndex << 8);
           if (specIndex >= 8)
             m--;

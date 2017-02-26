@@ -124,3 +124,12 @@
 [submodule "libraries/Kaleidoscope-LED-AlphaSquare"]
 	path = libraries/Kaleidoscope-LED-AlphaSquare
 	url = https://github.com/keyboardio/Kaleidoscope-LED-AlphaSquare
+[submodule "libraries/Kaleidoscope-Focus"]
+	path = libraries/Kaleidoscope-Focus
+	url = https://github.com/keyboardio/Kaleidoscope-Focus
+[submodule "libraries/Kaleidoscope-EEPROM-Settings"]
+	path = libraries/Kaleidoscope-EEPROM-Settings
+	url = https://github.com/keyboardio/Kaleidoscope-EEPROM-Settings
+[submodule "libraries/Kaleidoscope-EEPROM-Keymap"]
+	path = libraries/Kaleidoscope-EEPROM-Keymap
+	url = https://github.com/keyboardio/Kaleidoscope-EEPROM-Keymap

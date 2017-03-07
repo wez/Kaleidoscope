@@ -37,8 +37,6 @@ namespace KaleidoscopePlugins {
     virtual void begin (void) final;
     static void configure (uint8_t offAction);
 
-    void on (void);
-    void off (void);
     static uint16_t timeOut;
 
     void inject (Key key, uint8_t keyState);
@@ -46,7 +44,6 @@ namespace KaleidoscopePlugins {
   private:
     static uint32_t keyActionNeededMap;
     static uint32_t pressedMap;
-    static bool specDefault;
 
     static uint32_t endTime;
 
@@ -54,7 +51,6 @@ namespace KaleidoscopePlugins {
     static void pressAllSpecials (byte row, byte col);
 
     static Key eventHandlerHook (Key mappedKey, byte row, byte col, uint8_t keyState);
-    static Key disabledHook (Key, byte row, byte col, uint8_t keyState);
   };
 };
 

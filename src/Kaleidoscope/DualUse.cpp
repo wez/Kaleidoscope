@@ -27,8 +27,6 @@ namespace KaleidoscopePlugins {
   uint32_t DualUse::endTime;
   uint16_t DualUse::timeOut = 1000;
 
-  bool DualUse::specDefault;
-
   // ---- helpers ----
   Key
   DualUse::specialAction (uint8_t specIndex) {
@@ -71,45 +69,11 @@ namespace KaleidoscopePlugins {
   }
 
   void
-  DualUse::configure (uint8_t offAction) {
-    specDefault = !!offAction;
-  }
-
-  void
-  DualUse::on (void) {
-    event_handler_hook_replace (this->disabledHook, this->eventHandlerHook);
-  }
-
-  void
-  DualUse::off (void) {
-    event_handler_hook_replace (this->eventHandlerHook, this->disabledHook);
-  }
-
-  void
   DualUse::inject (Key key, uint8_t keyState) {
     eventHandlerHook (key, 255, 255, keyState);
   }
 
   // ---- Handlers ----
-
-  Key
-  DualUse::disabledHook (Key mappedKey, byte row, byte col, uint8_t keyState) {
-    if (mappedKey.raw < DU_FIRST || mappedKey.raw > DU_LAST)
-      return mappedKey;
-
-    Key newKey;
-
-    uint8_t specIndex = (mappedKey.raw - DU_FIRST) >> 8;
-
-    if (specDefault) {
-      newKey = specialAction (specIndex);
-    } else {
-      newKey.flags = KEY_FLAGS;
-      newKey.keyCode = mappedKey.raw - DU_FIRST - (specIndex << 8);
-    }
-
-    return newKey;
-  }
 
   Key
   DualUse::eventHandlerHook (Key mappedKey, byte row, byte col, uint8_t keyState) {

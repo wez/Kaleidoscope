@@ -59,9 +59,9 @@ const Key keymaps[][ROWS][COLS] PROGMEM = {
 };
 
 void setup () {
-  Kaleidoscope.setup (KEYMAP_SIZE);
+  Kaleidoscope.setup ();
 
-  Kaleidoscope.use (&DualUse, NULL);
+  USE_PLUGINS (&DualUse);
 }
 
 void loop () {

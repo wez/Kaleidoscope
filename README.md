@@ -35,9 +35,9 @@ tap and release them in isolation, they will act as another key instead.
 CTL_T(Esc), LT(_LAYER, Esc)
 
 void setup (void) {
-  Kaleidoscope.setup (KEYMAP_SIZE);
+  Kaleidoscope.setup ();
   
-  Kaleidoscope.use (&DualUse, NULL);
+  USE_PLUGINS (&DualUse);
 }
 ```
 
@@ -86,26 +86,6 @@ The plugin provides a number of macros one can use in keymap definitions:
 ## Plugin methods
 
 The plugin provides a single object, `DualUse`, with the following methods:
-
-### `.configure(offAction)`
-
-> Configures the plugin by telling it what to do when turned off. It can either
-> make the key act as a modifier or layer switcher, or as the key component in
-> the keymap declaration. The value of `offAction` can either be *zero*, where
-> in the turned off state, the plugin will make the key act as the modifier or
-> layer switcher; or it can be *one*, in which case, the plugin will simulate
-> the `key` component.
->
-> The default is to use the `key` component.
-
-### `.on()`
-
-> Turns the plugin on, if it has been turned off.
-
-### `.off()`
-
-> Turns the plugin off, by making the dual-use keys act as either the modifier
-> or layer switch keys, or as the key component.
 
 ### `.timeOut`
 

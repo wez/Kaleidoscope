@@ -22,8 +22,8 @@
 using namespace KaleidoscopePlugins::Ranges;
 
 namespace KaleidoscopePlugins {
-  uint32_t DualUse::keyActionNeededMap;
-  uint32_t DualUse::pressedMap;
+  uint16_t DualUse::keyActionNeededMap;
+  uint16_t DualUse::pressedMap;
   uint32_t DualUse::endTime;
   uint16_t DualUse::timeOut = 1000;
 

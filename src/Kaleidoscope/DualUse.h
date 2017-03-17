@@ -42,8 +42,8 @@ namespace KaleidoscopePlugins {
     void inject (Key key, uint8_t keyState);
 
   private:
-    static uint32_t keyActionNeededMap;
-    static uint32_t pressedMap;
+    static uint16_t keyActionNeededMap;
+    static uint16_t pressedMap;
 
     static uint32_t endTime;
 

@@ -133,3 +133,6 @@
 [submodule "libraries/Kaleidoscope-EEPROM-Keymap"]
 	path = libraries/Kaleidoscope-EEPROM-Keymap
 	url = https://github.com/keyboardio/Kaleidoscope-EEPROM-Keymap
+[submodule "libraries/Kaleidoscope-EEPROM-Colormap"]
+	path = libraries/Kaleidoscope-EEPROM-Colormap
+	url = https://github.com/keyboardio/Kaleidoscope-EEPROM-Colormap

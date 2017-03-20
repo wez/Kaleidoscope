@@ -97,6 +97,10 @@ The plugin provides a single object, `DualUse`, with the following methods:
 >
 > Defaults to 1000.
 
+## Dependencies
+
+* [Kaleidoscope-Ranges](https://github.com/keyboardio/Kaleidoscope-Ranges)
+
 ## Further reading
 
 Starting from the [example][plugin:example] is the recommended way of getting

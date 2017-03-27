@@ -54,7 +54,7 @@ namespace KaleidoscopePlugins {
 
       Key newKey = specialAction (specIndex);
       if (newKey.raw != Key_NoKey.raw)
-        handle_key_event (newKey, row, col, IS_PRESSED | INJECTED);
+        handle_keyswitch_event (newKey, row, col, IS_PRESSED | INJECTED);
     }
   }
 
@@ -107,7 +107,7 @@ namespace KaleidoscopePlugins {
 
           Key newKey = { m, KEY_FLAGS };
 
-          handle_key_event (newKey, row, col, IS_PRESSED | INJECTED);
+          handle_keyswitch_event (newKey, row, col, IS_PRESSED | INJECTED);
           Keyboard.sendReport ();
         } else {
           if (specIndex >= 8) {

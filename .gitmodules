@@ -139,3 +139,6 @@
 [submodule "libraries/Kaleidoscope-EEPROM-Keymap-Programmer"]
 	path = libraries/Kaleidoscope-EEPROM-Keymap-Programmer
 	url = https://github.com/keyboardio/Kaleidoscope-EEPROM-Keymap-Programmer
+[submodule "libraries/Kaleidoscope-FingerPainter"]
+	path = libraries/Kaleidoscope-FingerPainter
+	url = https://github.com/keyboardio/Kaleidoscope-FingerPainter

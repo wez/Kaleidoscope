@@ -142,3 +142,6 @@
 [submodule "libraries/Kaleidoscope-FingerPainter"]
 	path = libraries/Kaleidoscope-FingerPainter
 	url = https://github.com/keyboardio/Kaleidoscope-FingerPainter
+[submodule "libraries/Kaleidoscope-TypingBreaks"]
+	path = libraries/Kaleidoscope-TypingBreaks
+	url = https://github.com/keyboardio/Kaleidoscope-TypingBreaks.git

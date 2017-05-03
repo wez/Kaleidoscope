@@ -52,7 +52,7 @@ namespace KaleidoscopePlugins {
     /* Helpers */
     static void printNumber (uint16_t number);
     static void printSpace (void);
-    static void printColor (cRGB color);
+    static void printColor (uint8_t r, uint8_t g, uint8_t b);
     static void printSeparator (void);
     static void printBool (bool b);
 

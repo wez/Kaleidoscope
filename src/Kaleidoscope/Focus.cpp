@@ -96,7 +96,7 @@ namespace KaleidoscopePlugins {
   }
 
   void
-  Focus::printColor (uint8_t r, uint8_t, uint8_t b) {
+  Focus::printColor (uint8_t r, uint8_t g, uint8_t b) {
     printNumber (r);
     printSpace ();
     printNumber (g);

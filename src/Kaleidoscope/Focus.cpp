@@ -32,6 +32,13 @@ namespace KaleidoscopePlugins {
   }
 
   void
+  Focus::drain (void) {
+    if(Serial.available())
+        while(Serial.peek() != '\n')
+            Serial.read();
+  }
+
+  void
   Focus::addHook (HookNode *newNode) {
     if (!rootNode) {
       rootNode = newNode;
@@ -78,9 +85,8 @@ namespace KaleidoscopePlugins {
 
     Serial.println (F("."));
 
-    while (Serial.peek () != '\n') {
-      Serial.read ();
-    }
+    drain();
+
     if (Serial.peek () == '\n')
       Serial.read ();
   }

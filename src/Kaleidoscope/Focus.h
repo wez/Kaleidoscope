@@ -61,6 +61,7 @@ namespace KaleidoscopePlugins {
     static char command[32];
 
     static void loopHook (bool postClear);
+    static void drain(void);
   };
 };
 

@@ -34,7 +34,7 @@ namespace KaleidoscopePlugins {
 
     newKey.flags = KEY_FLAGS;
     if (specIndex < 8) {
-      newKey.keyCode = Key_LCtrl.keyCode + specIndex;
+      newKey.keyCode = Key_LeftControl.keyCode + specIndex;
     } else {
       uint8_t target = specIndex - 8;
 

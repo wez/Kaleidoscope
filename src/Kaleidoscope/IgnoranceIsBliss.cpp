@@ -20,40 +20,40 @@
 
 namespace KaleidoscopePlugins {
 
-  uint32_t IgnoranceIsBliss::leftHandIgnores;
-  uint32_t IgnoranceIsBliss::rightHandIgnores;
+uint32_t IgnoranceIsBliss::leftHandIgnores;
+uint32_t IgnoranceIsBliss::rightHandIgnores;
 
-  IgnoranceIsBliss::IgnoranceIsBliss (void) {
-  }
+IgnoranceIsBliss::IgnoranceIsBliss (void) {
+}
 
-  void
-  IgnoranceIsBliss::begin (void) {
+void
+IgnoranceIsBliss::begin (void) {
     event_handler_hook_use (this->eventHandlerHook);
-  }
+}
 
-  void
-  IgnoranceIsBliss::configure (uint32_t leftHandIgnores, uint32_t rightHandIgnores) {
+void
+IgnoranceIsBliss::configure (uint32_t leftHandIgnores, uint32_t rightHandIgnores) {
     IgnoranceIsBliss::leftHandIgnores = leftHandIgnores;
     IgnoranceIsBliss::rightHandIgnores = rightHandIgnores;
-  }
+}
 
-  Key
-  IgnoranceIsBliss::eventHandlerHook (Key mappedKey, byte row, byte col, uint8_t keyState) {
+Key
+IgnoranceIsBliss::eventHandlerHook (Key mappedKey, byte row, byte col, uint8_t keyState) {
     if (row >= ROWS || col >= COLS)
-      return mappedKey;
+        return mappedKey;
 
     uint32_t currentHand = leftHandIgnores;
 
     if (col >= 8) {
-      col = col - 8;
-      currentHand = rightHandIgnores;
+        col = col - 8;
+        currentHand = rightHandIgnores;
     }
 
     if (currentHand & SCANBIT (row, col))
-      return Key_NoKey;
+        return Key_NoKey;
 
     return mappedKey;
-  }
+}
 };
 
 KaleidoscopePlugins::IgnoranceIsBliss IgnoranceIsBliss;

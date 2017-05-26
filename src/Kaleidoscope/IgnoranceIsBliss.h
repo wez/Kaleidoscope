@@ -21,7 +21,7 @@
 #include <Kaleidoscope.h>
 
 namespace KaleidoscopePlugins {
-  class IgnoranceIsBliss : public KaleidoscopePlugin {
+class IgnoranceIsBliss : public KaleidoscopePlugin {
   public:
     IgnoranceIsBliss (void);
 
@@ -33,7 +33,7 @@ namespace KaleidoscopePlugins {
     static uint32_t rightHandIgnores;
 
     static Key eventHandlerHook (Key mappedKey, byte row, byte col, uint8_t keyState);
-  };
+};
 };
 
 extern KaleidoscopePlugins::IgnoranceIsBliss IgnoranceIsBliss;

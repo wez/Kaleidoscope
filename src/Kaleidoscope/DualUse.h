@@ -30,7 +30,7 @@
 #define LT(layer, key) (Key){ .raw = KaleidoscopePlugins::Ranges::DUL_FIRST + (layer << 8) + (Key_ ## key).keyCode }
 
 namespace KaleidoscopePlugins {
-  class DualUse : public KaleidoscopePlugin {
+class DualUse : public KaleidoscopePlugin {
   public:
     DualUse (void);
 
@@ -51,7 +51,7 @@ namespace KaleidoscopePlugins {
     static void pressAllSpecials (byte row, byte col);
 
     static Key eventHandlerHook (Key mappedKey, byte row, byte col, uint8_t keyState);
-  };
+};
 };
 
 extern KaleidoscopePlugins::DualUse DualUse;

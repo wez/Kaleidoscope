@@ -20,67 +20,67 @@
 #include <avr/pgmspace.h>
 
 namespace KaleidoscopePlugins {
-  char Focus::command[32];
-  Focus::HookNode *Focus::rootNode;
+char Focus::command[32];
+Focus::HookNode *Focus::rootNode;
 
-  Focus::Focus (void) {
-  }
+Focus::Focus (void) {
+}
 
-  void
-  Focus::begin (void) {
+void
+Focus::begin (void) {
     loop_hook_use (loopHook);
-  }
+}
 
-  void
-  Focus::drain (void) {
+void
+Focus::drain (void) {
     if(Serial.available())
         while(Serial.peek() != '\n')
             Serial.read();
-  }
+}
 
-  void
-  Focus::addHook (HookNode *newNode) {
+void
+Focus::addHook (HookNode *newNode) {
     if (!rootNode) {
-      rootNode = newNode;
+        rootNode = newNode;
     } else {
-      HookNode *node = rootNode;
+        HookNode *node = rootNode;
 
-      while (node->next) {
-        node = node->next;
-      }
-      node->next = newNode;
+        while (node->next) {
+            node = node->next;
+        }
+        node->next = newNode;
     }
-  }
+}
 
-  const Focus::HookNode *
-  Focus::getRootNode (void) {
+const Focus::HookNode *
+Focus::getRootNode (void) {
     return rootNode;
-  }
+}
 
-  void
-  Focus::loopHook (bool postClear) {
+void
+Focus::loopHook (bool postClear) {
     if (postClear)
-      return;
+        return;
 
     if (Serial.available () == 0)
-      return;
+        return;
 
     uint8_t i = 0;
     do {
-      command[i++] = Serial.read ();
+        command[i++] = Serial.read ();
 
-      if (Serial.peek () == '\n')
-        break;
+        if (Serial.peek () == '\n')
+            break;
     } while (command[i - 1] != ' ' && i < 32);
     if (command[i - 1] == ' ')
-      command[i - 1] = '\0';
+        command[i - 1] = '\0';
     else
-      command[i] = '\0';
+        command[i] = '\0';
 
     for (HookNode *node = rootNode; node; node = node->next) {
-      if ((*node->handler) (command)) {
-        break;
-      }
+        if ((*node->handler) (command)) {
+            break;
+        }
     }
 
     Serial.println (F("."));
@@ -88,61 +88,61 @@ namespace KaleidoscopePlugins {
     drain();
 
     if (Serial.peek () == '\n')
-      Serial.read ();
-  }
+        Serial.read ();
+}
 
-  void
-  Focus::printSpace (void) {
+void
+Focus::printSpace (void) {
     Serial.print (F(" "));
-  }
+}
 
-  void
-  Focus::printNumber (uint16_t num) {
+void
+Focus::printNumber (uint16_t num) {
     Serial.print (num);
-  }
+}
 
-  void
-  Focus::printColor (uint8_t r, uint8_t g, uint8_t b) {
+void
+Focus::printColor (uint8_t r, uint8_t g, uint8_t b) {
     printNumber (r);
     printSpace ();
     printNumber (g);
     printSpace ();
     printNumber (b);
-  }
+}
 
-  void
-  Focus::printSeparator (void) {
+void
+Focus::printSeparator (void) {
     Serial.print (F(" | "));
-  }
+}
 
-  void
-  Focus::printBool (bool b) {
+void
+Focus::printBool (bool b) {
     Serial.print ((b) ? F("true") : F("false"));
-  }
+}
 };
 
 KaleidoscopePlugins::Focus Focus;
 
 namespace FocusHooks {
-  bool help (const char *command) {
+bool help (const char *command) {
     if (strcmp_P (command, PSTR("help")) != 0)
-      return false;
+        return false;
 
     const KaleidoscopePlugins::Focus::HookNode *rootNode = Focus.getRootNode ();
 
     for (const KaleidoscopePlugins::Focus::HookNode *node = rootNode; node; node = node->next) {
-      if (!node->docs)
-        continue;
+        if (!node->docs)
+            continue;
 
-      Serial.println (node->docs);
+        Serial.println (node->docs);
     }
 
     return true;
-  }
+}
 
-  bool version (const char *command) {
+bool version (const char *command) {
     if (strcmp_P (command, PSTR ("version")) != 0)
-      return false;
+        return false;
 
     Serial.print (F("Kaleidoscope/"));
     Serial.print (F(VERSION));
@@ -156,6 +156,6 @@ namespace FocusHooks {
     Serial.println (F(__TIME__));
 
     return true;
-  }
+}
 
 }

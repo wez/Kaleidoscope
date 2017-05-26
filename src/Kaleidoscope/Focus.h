@@ -33,13 +33,13 @@
 #endif
 
 namespace KaleidoscopePlugins {
-  class Focus : public KaleidoscopePlugin {
+class Focus : public KaleidoscopePlugin {
   public:
     typedef bool (*Hook) (const char *command);
     typedef struct HookNode {
-      Hook handler;
-      const __FlashStringHelper *docs;
-      HookNode *next;
+        Hook handler;
+        const __FlashStringHelper *docs;
+        HookNode *next;
     } HookNode;
 
     Focus (void);
@@ -62,14 +62,14 @@ namespace KaleidoscopePlugins {
 
     static void loopHook (bool postClear);
     static void drain(void);
-  };
+};
 };
 
 extern KaleidoscopePlugins::Focus Focus;
 
 namespace FocusHooks {
-  bool help (const char *command);
-  bool version (const char *command);
+bool help (const char *command);
+bool version (const char *command);
 };
 
 #define FOCUS_HOOK_HELP    FOCUS_HOOK(FocusHooks::help, "help")

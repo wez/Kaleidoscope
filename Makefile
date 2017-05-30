@@ -1,7 +1,7 @@
 include libraries/Kaleidoscope-Plugin/build/arduino.mk
 
 travis-test:
-	TRAVIS_ARDUINO=$(TRAVIS_ARDUINO) perl build-tools/test-recursively travis-test
+	TRAVIS_ARDUINO_PATH=$(TRAVIS_ARDUINO_PATH) perl build-tools/test-recursively travis-test
 
 checkout-submodules:
 	git submodule update --init --recursive

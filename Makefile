@@ -1,3 +1,6 @@
+travis-test:
+	perl build-tools/test-recursively travis-test
+
 checkout-submodules:
 	git submodule update --init --recursive
 

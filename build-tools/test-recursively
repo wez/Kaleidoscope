@@ -1,0 +1,37 @@
+#!/usr/bin/perl 
+
+use warnings;
+use strict;
+
+my $failed_count = 0;
+my $run_count =0;
+my $target = shift;
+
+
+my $pwd = `pwd`;
+chomp($pwd);
+my @files = `git ls-files`;
+
+for my $dir (@files) {
+    chdir($pwd) || die $@;
+    chomp $dir;
+    next if ( !-d $dir );
+    next if ( !-f $dir . "/Makefile" );
+    chdir($dir);
+    my $has_target = `make -pRrq |grep ^travis-test`;
+    if ($has_target) {
+	print "cd $dir\n";
+	print "make $target\n";
+        system("make $target");
+	my $result = $? >> 8; 
+
+	print "Result: $result\n";
+	$failed_count += $result;
+	$run_count++;
+    }
+}
+
+print STDERR "Ran tests:      $run_count\n";
+print STDERR "Total failures: $failed_count\n";
+exit($failed_count);
+#make -pRrq |grep -q '^travis-test:$'

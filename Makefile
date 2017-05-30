@@ -1,5 +1,7 @@
+include libraries/Kaleidoscope-Plugin/build/arduino.mk
+
 travis-test:
-	perl build-tools/test-recursively travis-test
+	TRAVIS_ARDUINO=$(TRAVIS_ARDUINO) perl build-tools/test-recursively travis-test
 
 checkout-submodules:
 	git submodule update --init --recursive
@@ -13,3 +15,5 @@ git-pull:
 blindly-commit-updates: git-pull maintainer-update-submodules
 	git commit -a -m 'Blindly pull all plugins up to current'
 	git push
+
+

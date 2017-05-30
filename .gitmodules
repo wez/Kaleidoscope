@@ -1,6 +1,6 @@
 [submodule "bootloaders/caterina"]
 	path = bootloaders/caterina
-	url = https://github.com/keyboardio/Model01Bootloader
+	url = https://github.com/keyboardio/Model01-Bootloader
 [submodule "libraries/KeyboardioScanner"]
 	path = libraries/KeyboardioScanner
 	url = https://github.com/keyboardio/KeyboardioScanner
@@ -141,7 +141,7 @@
 	url = https://github.com/keyboardio/Kaleidoscope-FingerPainter
 [submodule "libraries/Kaleidoscope-TypingBreaks"]
 	path = libraries/Kaleidoscope-TypingBreaks
-	url = https://github.com/keyboardio/Kaleidoscope-TypingBreaks.git
+	url = https://github.com/keyboardio/Kaleidoscope-TypingBreaks
 [submodule "libraries/Kaleidoscope-Plugin"]
 	path = libraries/Kaleidoscope-Plugin
 	url = https://github.com/Keyboardio/Kaleidoscope-Plugin/

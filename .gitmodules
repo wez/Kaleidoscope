@@ -13,9 +13,6 @@
 [submodule "libraries/Arduino-HID"]
 	path = libraries/Arduino-HID
 	url = https://github.com/keyboardio/Arduino-HID
-[submodule "libraries/Model01Bootloader"]
-	path = libraries/Model01Bootloader
-	url = https://github.com/keyboardio/Model01Bootloader
 [submodule "libraries/Kaleidoscope-OneShot"]
 	path = libraries/Kaleidoscope-OneShot
 	url = https://github.com/keyboardio/Kaleidoscope-OneShot

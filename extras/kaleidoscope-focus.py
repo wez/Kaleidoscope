@@ -68,6 +68,8 @@ atexit.register (readline.write_history_file, histfile)
 while True:
     try:
         commander.run ()
+    except EOFError:
+        sys.exit (0)
     except Exception:
         print "WARNING: Connection to serial lost, sleeping 10s..."
         time.sleep (10)

@@ -5,9 +5,9 @@
  [travis:image]: https://travis-ci.org/keyboardio/Kaleidoscope-DualUse.svg?branch=master
  [travis:status]: https://travis-ci.org/keyboardio/Kaleidoscope-DualUse
 
- [st:stable]: https://img.shields.io/badge/stable-✔-black.png?style=flat&colorA=44cc11&colorB=494e52
- [st:broken]: https://img.shields.io/badge/broken-X-black.png?style=flat&colorA=e05d44&colorB=494e52
- [st:experimental]: https://img.shields.io/badge/experimental----black.png?style=flat&colorA=dfb317&colorB=494e52
+ [st:stable]: https://img.shields.io/badge/stable-✔-black.svg?style=flat&colorA=44cc11&colorB=494e52
+ [st:broken]: https://img.shields.io/badge/broken-X-black.svg?style=flat&colorA=e05d44&colorB=494e52
+ [st:experimental]: https://img.shields.io/badge/experimental----black.svg?style=flat&colorA=dfb317&colorB=494e52
 
 There are a number of keys on our keyboards that we usually hold in combination
 with others. We also have keys that we usually press and release, and don't want
@@ -34,10 +34,10 @@ tap and release them in isolation, they will act as another key instead.
 // in the keymap:
 CTL_T(Esc), LT(_LAYER, Esc)
 
-void setup (void) {
-  Kaleidoscope.setup ();
+void setup(void) {
+  USE_PLUGINS(&DualUse);
   
-  USE_PLUGINS (&DualUse);
+  Kaleidoscope.setup();
 }
 ```
 
@@ -87,7 +87,7 @@ The plugin provides a number of macros one can use in keymap definitions:
 
 The plugin provides a single object, `DualUse`, with the following methods:
 
-### `.timeOut`
+### `.time_out`
 
 > The number of milliseconds to wait before considering a held key in isolation
 > as its secondary role. That is, we'd have to hold a `Z/Control` key this long,

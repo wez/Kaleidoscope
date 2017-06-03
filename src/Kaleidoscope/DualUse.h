@@ -21,7 +21,7 @@
 #include <Kaleidoscope.h>
 #include <Kaleidoscope-Ranges.h>
 
-#define MT(mod, key) (Key){ .raw = KaleidoscopePlugins::Ranges::DUM_FIRST + (((Key_ ## mod).keyCode - Key_LeftControl.keyCode) << 8) + (Key_ ## key).keyCode }
+#define MT(mod, key) (Key) { .raw = KaleidoscopePlugins::Ranges::DUM_FIRST + (((Key_ ## mod).keyCode - Key_LeftControl.keyCode) << 8) + (Key_ ## key).keyCode }
 #define SFT_T(key) MT(LeftShift, key)
 #define CTL_T(key) MT(LeftControl, key)
 #define ALT_T(key) MT(LeftAlt, key)
@@ -29,28 +29,28 @@
 
 #define LT(layer, key) (Key){ .raw = KaleidoscopePlugins::Ranges::DUL_FIRST + (layer << 8) + (Key_ ## key).keyCode }
 
-namespace KaleidoscopePlugins {
+namespace kaleidoscope {
 class DualUse : public KaleidoscopePlugin {
   public:
-    DualUse (void);
+    static uint16_t time_out;
 
-    virtual void begin (void) final;
+    DualUse(void);
 
-    static uint16_t timeOut;
+    void begin(void) final;
 
-    void inject (Key key, uint8_t keyState);
+    void inject(Key key, uint8_t key_state);
 
   private:
-    static uint16_t keyActionNeededMap;
-    static uint16_t pressedMap;
+    static uint16_t key_action_needed_map_;
+    static uint16_t pressed_map_;
 
-    static uint32_t endTime;
+    static uint32_t end_time_;
 
-    static Key specialAction (uint8_t specIndex);
-    static void pressAllSpecials (byte row, byte col);
+    static Key specialAction(uint8_t spec_index);
+    static void pressAllSpecials(byte row, byte col);
 
-    static Key eventHandlerHook (Key mappedKey, byte row, byte col, uint8_t keyState);
+    static Key eventHandlerHook(Key mapped_key, byte row, byte col, uint8_t key_state);
 };
-};
+}
 
-extern KaleidoscopePlugins::DualUse DualUse;
+extern kaleidoscope::DualUse DualUse;

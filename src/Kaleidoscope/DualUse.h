@@ -35,7 +35,6 @@ class DualUse : public KaleidoscopePlugin {
     DualUse (void);
 
     virtual void begin (void) final;
-    static void configure (uint8_t offAction);
 
     static uint16_t timeOut;
 

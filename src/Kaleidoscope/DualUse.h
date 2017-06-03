@@ -27,29 +27,29 @@
 #define ALT_T(key) MT(LeftAlt, key)
 #define GUI_T(key) MT(LeftGui, key)
 
-#define LT(layer, key) (Key){ .raw = KaleidoscopePlugins::Ranges::DUL_FIRST + (layer << 8) + (Key_ ## key).keyCode }
+#define LT(layer, key) (Key) { .raw = KaleidoscopePlugins::Ranges::DUL_FIRST + (layer << 8) + (Key_ ## key).keyCode }
 
 namespace kaleidoscope {
 class DualUse : public KaleidoscopePlugin {
-  public:
-    static uint16_t time_out;
+ public:
+  static uint16_t time_out;
 
-    DualUse(void);
+  DualUse(void);
 
-    void begin(void) final;
+  void begin(void) final;
 
-    void inject(Key key, uint8_t key_state);
+  void inject(Key key, uint8_t key_state);
 
-  private:
-    static uint16_t key_action_needed_map_;
-    static uint16_t pressed_map_;
+ private:
+  static uint16_t key_action_needed_map_;
+  static uint16_t pressed_map_;
 
-    static uint32_t end_time_;
+  static uint32_t end_time_;
 
-    static Key specialAction(uint8_t spec_index);
-    static void pressAllSpecials(byte row, byte col);
+  static Key specialAction(uint8_t spec_index);
+  static void pressAllSpecials(byte row, byte col);
 
-    static Key eventHandlerHook(Key mapped_key, byte row, byte col, uint8_t key_state);
+  static Key eventHandlerHook(Key mapped_key, byte row, byte col, uint8_t key_state);
 };
 }
 

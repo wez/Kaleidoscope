@@ -29,31 +29,31 @@ namespace Ranges = ::KaleidoscopePlugins::Ranges;
 
 // ---- helpers ----
 Key DualUse::specialAction(uint8_t spec_index) {
-    Key newKey;
+  Key newKey;
 
-    newKey.flags = KEY_FLAGS;
-    if (spec_index < 8) {
-        newKey.keyCode = Key_LeftControl.keyCode + spec_index;
-    } else {
-        uint8_t target = spec_index - 8;
+  newKey.flags = KEY_FLAGS;
+  if (spec_index < 8) {
+    newKey.keyCode = Key_LeftControl.keyCode + spec_index;
+  } else {
+    uint8_t target = spec_index - 8;
 
-        Layer.on(target);
+    Layer.on(target);
 
-        newKey.keyCode = 0;
-    }
+    newKey.keyCode = 0;
+  }
 
-    return newKey;
+  return newKey;
 }
 
 void DualUse::pressAllSpecials(byte row, byte col) {
-    for (uint8_t spec_index = 0; spec_index < 32; spec_index++) {
-        if (!bitRead(pressed_map_, spec_index))
-            continue;
+  for (uint8_t spec_index = 0; spec_index < 32; spec_index++) {
+    if (!bitRead(pressed_map_, spec_index))
+      continue;
 
-        Key newKey = specialAction(spec_index);
-        if (newKey.raw != Key_NoKey.raw)
-            handle_keyswitch_event(newKey, row, col, IS_PRESSED | INJECTED);
-    }
+    Key newKey = specialAction(spec_index);
+    if (newKey.raw != Key_NoKey.raw)
+      handle_keyswitch_event(newKey, row, col, IS_PRESSED | INJECTED);
+  }
 }
 
 // ---- API ----
@@ -62,75 +62,75 @@ DualUse::DualUse(void) {
 }
 
 void DualUse::begin(void) {
-    event_handler_hook_use(eventHandlerHook);
+  event_handler_hook_use(eventHandlerHook);
 }
 
 void DualUse::inject(Key key, uint8_t key_state) {
-    eventHandlerHook(key, UNKNOWN_KEYSWITCH_LOCATION, key_state);
+  eventHandlerHook(key, UNKNOWN_KEYSWITCH_LOCATION, key_state);
 }
 
 // ---- Handlers ----
 
 Key DualUse::eventHandlerHook(Key mapped_key, byte row, byte col, uint8_t key_state) {
-    if (key_state & INJECTED)
-        return mapped_key;
-
-    // If nothing happened, bail out fast.
-    if (!key_is_pressed(key_state) && !key_was_pressed(key_state)) {
-        if (mapped_key.raw < Ranges::DU_FIRST || mapped_key.raw > Ranges::DU_LAST)
-            return mapped_key;
-        return Key_NoKey;
-    }
-
-    if (mapped_key.raw >= Ranges::DU_FIRST && mapped_key.raw <= Ranges::DU_LAST) {
-        uint8_t spec_index = (mapped_key.raw - Ranges::DU_FIRST) >> 8;
-        Key newKey = Key_NoKey;
-
-        if (key_toggled_on(key_state)) {
-            bitWrite(pressed_map_, spec_index, 1);
-            bitWrite(key_action_needed_map_, spec_index, 1);
-            end_time_ = millis() + time_out;
-        } else if (key_is_pressed(key_state)) {
-            if (millis() >= end_time_) {
-                newKey = specialAction(spec_index);
-            }
-        } else if (key_toggled_off(key_state)) {
-            if ((millis() >= end_time_) && bitRead(key_action_needed_map_, spec_index)) {
-                uint8_t m = mapped_key.raw - Ranges::DU_FIRST - (spec_index << 8);
-                if (spec_index >= 8)
-                    m--;
-
-                Key newKey = { m, KEY_FLAGS };
-
-                handle_keyswitch_event(newKey, row, col, IS_PRESSED | INJECTED);
-                Keyboard.sendReport();
-            } else {
-                if (spec_index >= 8) {
-                    uint8_t target = spec_index - 8;
-
-                    Layer.off(target);
-                }
-            }
-
-            bitWrite(pressed_map_, spec_index, 0);
-            bitWrite(key_action_needed_map_, spec_index, 0);
-        }
-
-        return newKey;
-    }
-
-    if (pressed_map_ == 0) {
-        return mapped_key;
-    }
-
-    pressAllSpecials(row, col);
-    key_action_needed_map_ = 0;
-
-    if (pressed_map_ > (1 << 7)) {
-        mapped_key = Layer.lookup(row, col);
-    }
-
+  if (key_state & INJECTED)
     return mapped_key;
+
+  // If nothing happened, bail out fast.
+  if (!key_is_pressed(key_state) && !key_was_pressed(key_state)) {
+    if (mapped_key.raw < Ranges::DU_FIRST || mapped_key.raw > Ranges::DU_LAST)
+      return mapped_key;
+    return Key_NoKey;
+  }
+
+  if (mapped_key.raw >= Ranges::DU_FIRST && mapped_key.raw <= Ranges::DU_LAST) {
+    uint8_t spec_index = (mapped_key.raw - Ranges::DU_FIRST) >> 8;
+    Key newKey = Key_NoKey;
+
+    if (key_toggled_on(key_state)) {
+      bitWrite(pressed_map_, spec_index, 1);
+      bitWrite(key_action_needed_map_, spec_index, 1);
+      end_time_ = millis() + time_out;
+    } else if (key_is_pressed(key_state)) {
+      if (millis() >= end_time_) {
+        newKey = specialAction(spec_index);
+      }
+    } else if (key_toggled_off(key_state)) {
+      if ((millis() >= end_time_) && bitRead(key_action_needed_map_, spec_index)) {
+        uint8_t m = mapped_key.raw - Ranges::DU_FIRST - (spec_index << 8);
+        if (spec_index >= 8)
+          m--;
+
+        Key newKey = { m, KEY_FLAGS };
+
+        handle_keyswitch_event(newKey, row, col, IS_PRESSED | INJECTED);
+        Keyboard.sendReport();
+      } else {
+        if (spec_index >= 8) {
+          uint8_t target = spec_index - 8;
+
+          Layer.off(target);
+        }
+      }
+
+      bitWrite(pressed_map_, spec_index, 0);
+      bitWrite(key_action_needed_map_, spec_index, 0);
+    }
+
+    return newKey;
+  }
+
+  if (pressed_map_ == 0) {
+    return mapped_key;
+  }
+
+  pressAllSpecials(row, col);
+  key_action_needed_map_ = 0;
+
+  if (pressed_map_ > (1 << 7)) {
+    mapped_key = Layer.lookup(row, col);
+  }
+
+  return mapped_key;
 }
 
 }

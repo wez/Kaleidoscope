@@ -5,9 +5,9 @@
  [travis:image]: https://travis-ci.org/keyboardio/Kaleidoscope-Focus.svg?branch=master
  [travis:status]: https://travis-ci.org/keyboardio/Kaleidoscope-Focus
 
- [st:stable]: https://img.shields.io/badge/stable-✔-black.png?style=flat&colorA=44cc11&colorB=494e52
- [st:broken]: https://img.shields.io/badge/broken-X-black.png?style=flat&colorA=e05d44&colorB=494e52
- [st:experimental]: https://img.shields.io/badge/experimental----black.png?style=flat&colorA=dfb317&colorB=494e52
+ [st:stable]: https://img.shields.io/badge/stable-✔-black.svg?style=flat&colorA=44cc11&colorB=494e52
+ [st:broken]: https://img.shields.io/badge/broken-X-black.svg?style=flat&colorA=e05d44&colorB=494e52
+ [st:experimental]: https://img.shields.io/badge/experimental----black.svg?style=flat&colorA=dfb317&colorB=494e52
 
 Bidirectional communication for Kaleidoscope. With this plugin, one can expose a
 set of commands via the Serial port, and allow the host to talk with the
@@ -30,9 +30,10 @@ like this:
 
 void setup () {
   Serial.begin (9600);
-  Kaleidoscope.setup ();
 
   USE_PLUGINS (&Focus);
+  
+  Kaleidoscope.setup ();
 
   Focus.addHook (FOCUS_HOOK_HELP);
   Focus.addHook (FOCUS_HOOK_VERSION);
@@ -58,17 +59,17 @@ The plugin provides the `Focus` object, which has the following method:
 
 ## Focus commands
 
-The plugin ships with two (optional) commands:
+The plugin ships with two (optional) hooks: `FOCUS_HOOK_VERSION`, and
+`FOCUS_HOOK_HELP`, implementing the following two commands, respectively:
 
-### `FOCUS_HOOK_VERSION`
+### `version`
 
-> A hook, that when called via the `version` command, prints the version of the
-> firmware, the keyboard vendor & product, compile date, and Arduino version.
+> Return the version of the firmware, the keyboard vendor & product, and the
+> compile date.
 
 ### `FOCUS_HOOK_HELP`
 
-> A hook, that when called via the `help` command, walks through the registered
-> hooks, and prints their documentation.
+> Return the list of commands the keyboard supports.
 
 ## Further reading
 

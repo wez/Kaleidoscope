@@ -16,23 +16,25 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#pragma once
+
 #include <Kaleidoscope.h>
 
 #if FOCUS_WITHOUT_DOCS
 #define FOCUS_HOOK(n, d) ({                               \
-      static KaleidoscopePlugins::Focus::HookNode _c = {  \
+      static kaleidoscope::Focus::HookNode _c = {         \
         &n, NULL, NULL};                                  \
       &_c;                                                \
     })
 #else
 #define FOCUS_HOOK(n, d) ({                               \
-      static KaleidoscopePlugins::Focus::HookNode _c = {  \
+      static kaleidoscope::Focus::HookNode _c = {         \
         &n, F(d), NULL};                                  \
       &_c;                                                \
     })
 #endif
 
-namespace KaleidoscopePlugins {
+namespace kaleidoscope {
 class Focus : public KaleidoscopePlugin {
  public:
   typedef bool (*Hook)(const char *command);
@@ -46,8 +48,8 @@ class Focus : public KaleidoscopePlugin {
 
   void begin(void) final;
 
-  static void addHook(HookNode *newNode);
-  static const HookNode *getRootNode(void);
+  static void addHook(HookNode *new_node);
+  static const HookNode *root_node(void);
 
   /* Helpers */
   static void printNumber(uint16_t number);
@@ -57,15 +59,15 @@ class Focus : public KaleidoscopePlugin {
   static void printBool(bool b);
 
  private:
-  static HookNode *rootNode;
-  static char command[32];
+  static HookNode *root_node_;
+  static char command_[32];
 
   static void loopHook(bool postClear);
   static void drain(void);
 };
 };
 
-extern KaleidoscopePlugins::Focus Focus;
+extern kaleidoscope::Focus Focus;
 
 namespace FocusHooks {
 bool help(const char *command);

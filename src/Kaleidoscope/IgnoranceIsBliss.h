@@ -20,20 +20,20 @@
 
 #include <Kaleidoscope.h>
 
-namespace KaleidoscopePlugins {
+namespace kaleidoscope {
 class IgnoranceIsBliss : public KaleidoscopePlugin {
  public:
   IgnoranceIsBliss(void);
 
   void begin(void) final;
-  static void configure(uint32_t leftHandIgnores, uint32_t rightHandIgnores);
+  static void ignoreKeys(uint32_t left_hand_ignores, uint32_t right_hand_ignores);
 
  private:
-  static uint32_t leftHandIgnores;
-  static uint32_t rightHandIgnores;
+  static uint32_t left_hand_ignores_;
+  static uint32_t right_hand_ignores_;
 
-  static Key eventHandlerHook(Key mappedKey, byte row, byte col, uint8_t keyState);
+  static Key eventHandlerHook(Key mapped_key, byte row, byte col, uint8_t key_state);
 };
 };
 
-extern KaleidoscopePlugins::IgnoranceIsBliss IgnoranceIsBliss;
+extern kaleidoscope::IgnoranceIsBliss IgnoranceIsBliss;

@@ -18,42 +18,40 @@
 
 #include <Kaleidoscope-IgnoranceIsBliss.h>
 
-namespace KaleidoscopePlugins {
+namespace kaleidoscope {
 
-uint32_t IgnoranceIsBliss::leftHandIgnores;
-uint32_t IgnoranceIsBliss::rightHandIgnores;
+uint32_t IgnoranceIsBliss::left_hand_ignores_;
+uint32_t IgnoranceIsBliss::right_hand_ignores_;
 
 IgnoranceIsBliss::IgnoranceIsBliss(void) {
 }
 
-void
-IgnoranceIsBliss::begin(void) {
+void IgnoranceIsBliss::begin(void) {
   event_handler_hook_use(this->eventHandlerHook);
 }
 
-void
-IgnoranceIsBliss::configure(uint32_t leftHandIgnores, uint32_t rightHandIgnores) {
-  IgnoranceIsBliss::leftHandIgnores = leftHandIgnores;
-  IgnoranceIsBliss::rightHandIgnores = rightHandIgnores;
+void IgnoranceIsBliss::ignoreKeys(uint32_t left_hand_ignores, uint32_t right_hand_ignores) {
+  left_hand_ignores_ = left_hand_ignores;
+  right_hand_ignores_ = right_hand_ignores;
 }
 
-Key
-IgnoranceIsBliss::eventHandlerHook(Key mappedKey, byte row, byte col, uint8_t keyState) {
+Key IgnoranceIsBliss::eventHandlerHook(Key mapped_key, byte row, byte col, uint8_t key_state) {
   if (row >= ROWS || col >= COLS)
-    return mappedKey;
+    return mapped_key;
 
-  uint32_t currentHand = leftHandIgnores;
+  uint32_t current_hand = left_hand_ignores_;
 
   if (col >= 8) {
     col = col - 8;
-    currentHand = rightHandIgnores;
+    current_hand = right_hand_ignores_;
   }
 
-  if (currentHand & SCANBIT(row, col))
+  if (current_hand & SCANBIT(row, col))
     return Key_NoKey;
 
-  return mappedKey;
+  return mapped_key;
 }
-};
 
-KaleidoscopePlugins::IgnoranceIsBliss IgnoranceIsBliss;
+}
+
+kaleidoscope::IgnoranceIsBliss IgnoranceIsBliss;

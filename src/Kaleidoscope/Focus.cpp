@@ -50,8 +50,8 @@ void Focus::addHook(HookNode *new_node) {
   }
 }
 
-void Focus::loopHook(bool postClear) {
-  if (postClear)
+void Focus::loopHook(bool is_post_clear) {
+  if (is_post_clear)
     return;
 
   if (Serial.available() == 0)

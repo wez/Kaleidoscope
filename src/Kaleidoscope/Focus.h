@@ -65,7 +65,7 @@ class Focus : public KaleidoscopePlugin {
   static HookNode *root_node_;
   static char command_[32];
 
-  static void loopHook(bool postClear);
+  static void loopHook(bool is_post_clear);
   static void drain(void);
 };
 };

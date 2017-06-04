@@ -25,7 +25,7 @@ class IgnoranceIsBliss : public KaleidoscopePlugin {
  public:
   IgnoranceIsBliss(void);
 
-  virtual void begin(void) final;
+  void begin(void) final;
   static void configure(uint32_t leftHandIgnores, uint32_t rightHandIgnores);
 
  private:

@@ -67,7 +67,7 @@ The plugin ships with two (optional) hooks: `FOCUS_HOOK_VERSION`, and
 > Return the version of the firmware, the keyboard vendor & product, and the
 > compile date.
 
-### `FOCUS_HOOK_HELP`
+### `help`
 
 > Return the list of commands the keyboard supports.
 

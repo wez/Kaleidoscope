@@ -22,17 +22,17 @@
 
 namespace KaleidoscopePlugins {
 class IgnoranceIsBliss : public KaleidoscopePlugin {
-  public:
-    IgnoranceIsBliss (void);
+ public:
+  IgnoranceIsBliss(void);
 
-    virtual void begin (void) final;
-    static void configure (uint32_t leftHandIgnores, uint32_t rightHandIgnores);
+  virtual void begin(void) final;
+  static void configure(uint32_t leftHandIgnores, uint32_t rightHandIgnores);
 
-  private:
-    static uint32_t leftHandIgnores;
-    static uint32_t rightHandIgnores;
+ private:
+  static uint32_t leftHandIgnores;
+  static uint32_t rightHandIgnores;
 
-    static Key eventHandlerHook (Key mappedKey, byte row, byte col, uint8_t keyState);
+  static Key eventHandlerHook(Key mappedKey, byte row, byte col, uint8_t keyState);
 };
 };
 

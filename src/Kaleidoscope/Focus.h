@@ -44,7 +44,7 @@ class Focus : public KaleidoscopePlugin {
 
   Focus(void);
 
-  virtual void begin(void) final;
+  void begin(void) final;
 
   static void addHook(HookNode *newNode);
   static const HookNode *getRootNode(void);

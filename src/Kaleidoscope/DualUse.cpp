@@ -29,20 +29,20 @@ namespace Ranges = ::KaleidoscopePlugins::Ranges;
 
 // ---- helpers ----
 Key DualUse::specialAction(uint8_t spec_index) {
-  Key newKey;
+  Key new_key;
 
-  newKey.flags = KEY_FLAGS;
+  new_key.flags = KEY_FLAGS;
   if (spec_index < 8) {
-    newKey.keyCode = Key_LeftControl.keyCode + spec_index;
+    new_key.keyCode = Key_LeftControl.keyCode + spec_index;
   } else {
     uint8_t target = spec_index - 8;
 
     Layer.on(target);
 
-    newKey.keyCode = 0;
+    new_key.keyCode = 0;
   }
 
-  return newKey;
+  return new_key;
 }
 
 void DualUse::pressAllSpecials(byte row, byte col) {
@@ -50,9 +50,9 @@ void DualUse::pressAllSpecials(byte row, byte col) {
     if (!bitRead(pressed_map_, spec_index))
       continue;
 
-    Key newKey = specialAction(spec_index);
-    if (newKey.raw != Key_NoKey.raw)
-      handle_keyswitch_event(newKey, row, col, IS_PRESSED | INJECTED);
+    Key new_key = specialAction(spec_index);
+    if (new_key.raw != Key_NoKey.raw)
+      handle_keyswitch_event(new_key, row, col, IS_PRESSED | INJECTED);
   }
 }
 
@@ -84,7 +84,7 @@ Key DualUse::eventHandlerHook(Key mapped_key, byte row, byte col, uint8_t key_st
 
   if (mapped_key.raw >= Ranges::DU_FIRST && mapped_key.raw <= Ranges::DU_LAST) {
     uint8_t spec_index = (mapped_key.raw - Ranges::DU_FIRST) >> 8;
-    Key newKey = Key_NoKey;
+    Key new_key = Key_NoKey;
 
     if (key_toggled_on(key_state)) {
       bitWrite(pressed_map_, spec_index, 1);
@@ -92,7 +92,7 @@ Key DualUse::eventHandlerHook(Key mapped_key, byte row, byte col, uint8_t key_st
       end_time_ = millis() + time_out;
     } else if (key_is_pressed(key_state)) {
       if (millis() >= end_time_) {
-        newKey = specialAction(spec_index);
+        new_key = specialAction(spec_index);
       }
     } else if (key_toggled_off(key_state)) {
       if ((millis() >= end_time_) && bitRead(key_action_needed_map_, spec_index)) {
@@ -100,9 +100,9 @@ Key DualUse::eventHandlerHook(Key mapped_key, byte row, byte col, uint8_t key_st
         if (spec_index >= 8)
           m--;
 
-        Key newKey = { m, KEY_FLAGS };
+        Key new_key = { m, KEY_FLAGS };
 
-        handle_keyswitch_event(newKey, row, col, IS_PRESSED | INJECTED);
+        handle_keyswitch_event(new_key, row, col, IS_PRESSED | INJECTED);
         Keyboard.sendReport();
       } else {
         if (spec_index >= 8) {
@@ -116,7 +116,7 @@ Key DualUse::eventHandlerHook(Key mapped_key, byte row, byte col, uint8_t key_st
       bitWrite(key_action_needed_map_, spec_index, 0);
     }
 
-    return newKey;
+    return new_key;
   }
 
   if (pressed_map_ == 0) {

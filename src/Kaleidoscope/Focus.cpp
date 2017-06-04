@@ -50,10 +50,6 @@ void Focus::addHook(HookNode *new_node) {
   }
 }
 
-const Focus::HookNode * Focus::root_node(void) {
-  return root_node_;
-}
-
 void Focus::loopHook(bool postClear) {
   if (postClear)
     return;
@@ -110,18 +106,12 @@ void Focus::printSeparator(void) {
 void Focus::printBool(bool b) {
   Serial.print((b) ? F("true") : F("false"));
 }
-};
 
-kaleidoscope::Focus Focus;
-
-namespace FocusHooks {
-bool help(const char *command) {
+bool Focus::helpHook(const char *command) {
   if (strcmp_P(command, PSTR("help")) != 0)
     return false;
 
-  const kaleidoscope::Focus::HookNode *root_node_ = Focus.root_node();
-
-  for (const kaleidoscope::Focus::HookNode *node = root_node_; node; node = node->next) {
+  for (const HookNode *node = root_node_; node; node = node->next) {
     if (!node->docs)
       continue;
 
@@ -131,22 +121,24 @@ bool help(const char *command) {
   return true;
 }
 
-bool version(const char *command) {
+bool Focus::versionHook(const char *command) {
   if (strcmp_P(command, PSTR("version")) != 0)
     return false;
 
   Serial.print(F("Kaleidoscope/"));
   Serial.print(F(VERSION));
-  Focus.printSpace();
+  printSpace();
   Serial.print(F(USB_MANUFACTURER));
   Serial.print(F("/"));
   Serial.print(F(USB_PRODUCT));
-  Focus.printSeparator();
+  printSeparator();
   Serial.print(F(__DATE__));
-  Focus.printSpace();
+  printSpace();
   Serial.println(F(__TIME__));
 
   return true;
 }
 
 }
+
+kaleidoscope::Focus Focus;

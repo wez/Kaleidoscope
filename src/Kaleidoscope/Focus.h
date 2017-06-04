@@ -49,7 +49,6 @@ class Focus : public KaleidoscopePlugin {
   void begin(void) final;
 
   static void addHook(HookNode *new_node);
-  static const HookNode *root_node(void);
 
   /* Helpers */
   static void printNumber(uint16_t number);
@@ -57,6 +56,10 @@ class Focus : public KaleidoscopePlugin {
   static void printColor(uint8_t r, uint8_t g, uint8_t b);
   static void printSeparator(void);
   static void printBool(bool b);
+
+  /* Hooks */
+  static bool helpHook(const char *command);
+  static bool versionHook(const char *command);
 
  private:
   static HookNode *root_node_;
@@ -69,10 +72,5 @@ class Focus : public KaleidoscopePlugin {
 
 extern kaleidoscope::Focus Focus;
 
-namespace FocusHooks {
-bool help(const char *command);
-bool version(const char *command);
-};
-
-#define FOCUS_HOOK_HELP    FOCUS_HOOK(FocusHooks::help, "help")
-#define FOCUS_HOOK_VERSION FOCUS_HOOK(FocusHooks::version, "version")
+#define FOCUS_HOOK_HELP    FOCUS_HOOK(Focus.helpHook, "help")
+#define FOCUS_HOOK_VERSION FOCUS_HOOK(Focus.versionHook, "version")

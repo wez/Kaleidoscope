@@ -34,42 +34,42 @@
 
 namespace KaleidoscopePlugins {
 class Focus : public KaleidoscopePlugin {
-  public:
-    typedef bool (*Hook) (const char *command);
-    typedef struct HookNode {
-        Hook handler;
-        const __FlashStringHelper *docs;
-        HookNode *next;
-    } HookNode;
+ public:
+  typedef bool (*Hook)(const char *command);
+  typedef struct HookNode {
+    Hook handler;
+    const __FlashStringHelper *docs;
+    HookNode *next;
+  } HookNode;
 
-    Focus (void);
+  Focus(void);
 
-    virtual void begin (void) final;
+  virtual void begin(void) final;
 
-    static void addHook (HookNode *newNode);
-    static const HookNode *getRootNode (void);
+  static void addHook(HookNode *newNode);
+  static const HookNode *getRootNode(void);
 
-    /* Helpers */
-    static void printNumber (uint16_t number);
-    static void printSpace (void);
-    static void printColor (uint8_t r, uint8_t g, uint8_t b);
-    static void printSeparator (void);
-    static void printBool (bool b);
+  /* Helpers */
+  static void printNumber(uint16_t number);
+  static void printSpace(void);
+  static void printColor(uint8_t r, uint8_t g, uint8_t b);
+  static void printSeparator(void);
+  static void printBool(bool b);
 
-  private:
-    static HookNode *rootNode;
-    static char command[32];
+ private:
+  static HookNode *rootNode;
+  static char command[32];
 
-    static void loopHook (bool postClear);
-    static void drain(void);
+  static void loopHook(bool postClear);
+  static void drain(void);
 };
 };
 
 extern KaleidoscopePlugins::Focus Focus;
 
 namespace FocusHooks {
-bool help (const char *command);
-bool version (const char *command);
+bool help(const char *command);
+bool version(const char *command);
 };
 
 #define FOCUS_HOOK_HELP    FOCUS_HOOK(FocusHooks::help, "help")

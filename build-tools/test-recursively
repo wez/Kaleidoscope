@@ -18,7 +18,7 @@ for my $dir (@files) {
     next if ( !-d $dir );
     next if ( !-f $dir . "/Makefile" );
     chdir($dir);
-    my $has_target = `make -pRrq |grep ^travis-test`;
+    my $has_target = `make -pRrq 2>/dev/null |grep ^travis-test 2>/dev/null`;
     if ($has_target) {
 	print "cd $dir\n";
 	print "make $target\n";

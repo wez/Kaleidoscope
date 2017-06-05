@@ -25,8 +25,6 @@ uint16_t DualUse::pressed_map_;
 uint32_t DualUse::end_time_;
 uint16_t DualUse::time_out = 1000;
 
-namespace Ranges = ::KaleidoscopePlugins::Ranges;
-
 // ---- helpers ----
 Key DualUse::specialAction(uint8_t spec_index) {
   Key new_key;
@@ -77,13 +75,13 @@ Key DualUse::eventHandlerHook(Key mapped_key, byte row, byte col, uint8_t key_st
 
   // If nothing happened, bail out fast.
   if (!key_is_pressed(key_state) && !key_was_pressed(key_state)) {
-    if (mapped_key.raw < Ranges::DU_FIRST || mapped_key.raw > Ranges::DU_LAST)
+    if (mapped_key.raw < ranges::DU_FIRST || mapped_key.raw > ranges::DU_LAST)
       return mapped_key;
     return Key_NoKey;
   }
 
-  if (mapped_key.raw >= Ranges::DU_FIRST && mapped_key.raw <= Ranges::DU_LAST) {
-    uint8_t spec_index = (mapped_key.raw - Ranges::DU_FIRST) >> 8;
+  if (mapped_key.raw >= ranges::DU_FIRST && mapped_key.raw <= ranges::DU_LAST) {
+    uint8_t spec_index = (mapped_key.raw - ranges::DU_FIRST) >> 8;
     Key new_key = Key_NoKey;
 
     if (key_toggled_on(key_state)) {
@@ -96,7 +94,7 @@ Key DualUse::eventHandlerHook(Key mapped_key, byte row, byte col, uint8_t key_st
       }
     } else if (key_toggled_off(key_state)) {
       if ((millis() >= end_time_) && bitRead(key_action_needed_map_, spec_index)) {
-        uint8_t m = mapped_key.raw - Ranges::DU_FIRST - (spec_index << 8);
+        uint8_t m = mapped_key.raw - ranges::DU_FIRST - (spec_index << 8);
         if (spec_index >= 8)
           m--;
 

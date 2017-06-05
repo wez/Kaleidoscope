@@ -85,15 +85,13 @@ The plugin provides a number of macros one can use in keymap definitions:
 
 ## Plugin methods
 
-The plugin provides a single object, `DualUse`, with the following methods:
+The plugin provides a single object, `DualUse`, with the following property:
 
 ### `.time_out`
 
 > The number of milliseconds to wait before considering a held key in isolation
 > as its secondary role. That is, we'd have to hold a `Z/Control` key this long,
 > by itself, to trigger the `Control` role.
->
-> Not strictly a method, it is a variable one can assign a new value to.
 >
 > Defaults to 1000.
 

@@ -26,12 +26,10 @@ class IgnoranceIsBliss : public KaleidoscopePlugin {
   IgnoranceIsBliss(void);
 
   void begin(void) final;
-  static void ignoreKeys(uint32_t left_hand_ignores, uint32_t right_hand_ignores);
+  static uint32_t left_hand_ignores;
+  static uint32_t right_hand_ignores;
 
  private:
-  static uint32_t left_hand_ignores_;
-  static uint32_t right_hand_ignores_;
-
   static Key eventHandlerHook(Key mapped_key, byte row, byte col, uint8_t key_state);
 };
 };

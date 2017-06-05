@@ -20,8 +20,8 @@
 
 namespace kaleidoscope {
 
-uint32_t IgnoranceIsBliss::left_hand_ignores_;
-uint32_t IgnoranceIsBliss::right_hand_ignores_;
+uint32_t IgnoranceIsBliss::left_hand_ignores;
+uint32_t IgnoranceIsBliss::right_hand_ignores;
 
 IgnoranceIsBliss::IgnoranceIsBliss(void) {
 }
@@ -30,20 +30,15 @@ void IgnoranceIsBliss::begin(void) {
   event_handler_hook_use(this->eventHandlerHook);
 }
 
-void IgnoranceIsBliss::ignoreKeys(uint32_t left_hand_ignores, uint32_t right_hand_ignores) {
-  left_hand_ignores_ = left_hand_ignores;
-  right_hand_ignores_ = right_hand_ignores;
-}
-
 Key IgnoranceIsBliss::eventHandlerHook(Key mapped_key, byte row, byte col, uint8_t key_state) {
   if (row >= ROWS || col >= COLS)
     return mapped_key;
 
-  uint32_t current_hand = left_hand_ignores_;
+  uint32_t current_hand = left_hand_ignores;
 
   if (col >= 8) {
     col = col - 8;
-    current_hand = right_hand_ignores_;
+    current_hand = right_hand_ignores;
   }
 
   if (current_hand & SCANBIT(row, col))

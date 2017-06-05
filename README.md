@@ -28,19 +28,23 @@ void setup() {
   
   Kaleidoscope.setup();
 
-  IgnoranceIsBliss.ignoreKeys(R0C6 | R2C6, R0C15);
+  IgnoranceIsBliss.left_hand_ignores = R0C6 | R2C6;
+  IgnoranceIsBliss.right_hand_ignores = R0C15;
 }
 ```
 
 ## Plugin methods
 
 The plugin provides an `IgnoranceIsBliss` singleton object, with the following
-method:
+properties:
 
-### `.ignoreKeys(left_hand_ignores, right_hand_ignores)`
+### `.left_hand_ignores`
 
-> Tells the extension to ignore the given keys. Both the left- and right-hand
-> sides must be an OR-ed list of `RxCy` constants.
+> An OR-ed list of `RxCy` constants, the keys to ignore on the left half.
+
+### `.right_hand_ignores`
+
+> An OR-ed list of `RxCy` constants, the keys to ignore on the right half.
 
 ## Further reading
 

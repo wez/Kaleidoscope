@@ -1,0 +1,5 @@
+[submodule "lufa"]
+	path = lufa
+	url = https://github.com/keyboardio/lufa
+        branch = LUFA-111009-branch
+

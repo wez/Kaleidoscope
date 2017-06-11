@@ -1,0 +1,45 @@
+{
+  "packages": [
+    {
+      "name": "Keyboardio",
+      "maintainer": "Keyboardio",
+      "websiteURL": "http://keyboard.io/",
+      "email": "",
+      "help": {
+        "online": "http://keyboard.io"
+      },
+      "platforms": [
+        {
+          "name": "keyboardio",
+          "architecture": "avr",
+          "version": "0.0.1",
+          "category": "Arduino@Heart",
+          "help": {
+            "online": "https://github.com/Keyboardio"
+          },
+          "url": "https://github.com/keyboardio/Arduino-Boards/archive/master.zip",
+           "xxx-todo-url": "https://github.com/Keyboardio/Arduino-Boards/blob/master/download_package/Arduino-Boards-v1.0.0.zip?raw=true",
+          "archiveFileName": "Arduino-Boards-v1.0.0.zip",
+          "xxx-todo-checksum": "SHA-256:XXXTBDXXX",
+          "xxx-todo-size": "1899",
+          "boards": [
+            {"name": "Keyboardio Model 01"}
+          ],
+          "toolsDependencies": [
+            {
+              "packager": "arduino",
+              "name": "avr-gcc",
+              "version": "4.8.1-arduino5"
+            },
+            {
+              "packager": "arduino",
+              "name": "avrdude",
+              "version": "6.0.1-arduino5"
+            }
+          ]
+        }
+      ],
+      "tools": []
+    }
+  ]
+}
